@@ -1,0 +1,58 @@
+@use '../abstracts' as *;
+
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background-color: rgb(from var(--bg-primary) r g b / 92%);
+    border-bottom: 1px solid var(--border-secondary);
+    backdrop-filter: blur(8px);
+
+    &__inner {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1.6rem 2rem;
+        max-width: 120rem;
+        margin-inline: auto;
+        padding: 1.6rem 2rem;
+
+        @include tablet {
+            padding-inline: 4rem;
+        }
+    }
+
+    &__logo {
+        font-family: var(--font-heading);
+        font-size: var(--font-size-lg);
+        letter-spacing: var(--heading-letter-spacing);
+        color: var(--color-gold);
+        text-decoration: none;
+    }
+
+    &__nav {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.6rem;
+    }
+
+    &__link {
+        padding-block: 0.4rem;
+        color: var(--text-secondary);
+        font-weight: var(--font-weight-semibold);
+        text-decoration: none;
+        border-bottom: 2px solid transparent;
+        transition: color 0.2s ease, border-color 0.2s ease;
+
+        &:hover,
+        &:focus-visible {
+            color: var(--color-accent);
+        }
+
+        &--active {
+            color: var(--text-primary);
+            border-bottom-color: var(--color-gold);
+        }
+    }
+}

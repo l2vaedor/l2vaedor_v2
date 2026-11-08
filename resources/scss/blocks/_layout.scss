@@ -1,0 +1,13 @@
+.layout {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: var(--font-body);
+    line-height: var(--line-height-body);
+
+    &__main {
+        flex: 1;
+    }
+}

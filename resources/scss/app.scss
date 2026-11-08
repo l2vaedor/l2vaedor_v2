@@ -1,9 +1,7 @@
 /* ==========================================
-   Abstracts
+   Entry point
 ========================================== */
 
 @use 'abstracts';
 @use 'base';
-@use 'components';
-@use 'pages';
-@use 'layout';
+@use 'blocks';
