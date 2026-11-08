@@ -1,0 +1,69 @@
+@use '../../abstracts' as *;
+
+.section--features {
+  --section-features-image: url('/l2vaedor/public/assets/images/temp/bg-features-vaedor.png');
+
+  isolation: isolate;
+  padding-top: clamp(7rem, 11vw, 12rem);
+  padding-bottom: clamp(7rem, 11vw, 12rem);
+  background:
+    linear-gradient(
+      180deg,
+      rgb(from var(--bg-primary) r g b / 96%),
+      rgb(from var(--bg-primary) r g b / 88%) 48%,
+      rgb(from var(--bg-primary) r g b / 96%)
+    ),
+    radial-gradient(
+      ellipse at 50% 12%,
+      rgb(from var(--color-primary) r g b / 16%),
+      transparent 42rem
+    );
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -2;
+    opacity: 0.28;
+    background:
+      linear-gradient(
+          rgb(from var(--color-accent) r g b / 7%),
+          rgb(from var(--color-accent) r g b / 0%)
+        )
+        top center / 100% 1px no-repeat,
+      var(--section-features-image) center / cover fixed;
+    filter: saturate(0.72) brightness(0.5);
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    inset: auto 0 0;
+    z-index: -1;
+    height: 13rem;
+    @include gradient-linear(180deg, rgb(from var(--bg-primary) r g b / 0%), var(--bg-primary));
+    pointer-events: none;
+  }
+
+  .section__body {
+    margin-top: clamp(0.5rem, 2vw, 1.5rem);
+  }
+}
+
+@media (max-width: 992px) {
+  .section--features {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .section--features {
+    padding-top: 4.5rem;
+    padding-bottom: 4.5rem;
+
+    &::before {
+      background-attachment: scroll;
+    }
+  }
+}

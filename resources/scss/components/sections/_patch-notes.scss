@@ -1,0 +1,40 @@
+@use '../../abstracts' as *;
+
+.section--patch-notes {
+  isolation: isolate;
+  border-top: 1px solid var(--border-secondary);
+  border-bottom: 1px solid var(--border-secondary);
+  padding-top: clamp(7rem, 10vw, 10rem);
+  padding-bottom: clamp(7rem, 10vw, 10rem);
+  background:
+    radial-gradient(
+      ellipse at 26% 18%,
+      rgb(from var(--color-accent) r g b / 10%),
+      transparent 34rem
+    ),
+    radial-gradient(
+      ellipse at 70% 8%,
+      rgb(from var(--color-primary) r g b / 14%),
+      transparent 38rem
+    ),
+    linear-gradient(
+      180deg,
+      rgb(from var(--bg-secondary) r g b / 78%),
+      rgb(from var(--bg-primary) r g b / 50%)
+    ),
+    url('/l2vaedor/public/assets/images/temp/bg-news-vaedor.png') center / cover no-repeat;
+}
+
+@media (max-width: 992px) {
+  .section--patch-notes {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .section--patch-notes {
+    padding-top: 4.5rem;
+    padding-bottom: 4.5rem;
+  }
+}

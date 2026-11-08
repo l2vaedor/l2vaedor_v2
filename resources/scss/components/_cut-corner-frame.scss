@@ -1,0 +1,65 @@
+.cut-corner-frame {
+  --border-color: rgba(255, 255, 255, 0.24);
+  --cut-corner-size: 0.8rem;
+  --cut-corner-border: var(--border-color, rgb(from var(--border-color) r g b / 24%));
+  --cut-corner-bg: var(--bg-surface);
+  --cut-corner-mask:
+    radial-gradient(
+        circle at 0 0,
+        transparent 0 calc(var(--cut-corner-size) - 1px),
+        #000 var(--cut-corner-size)
+      )
+      0 0 / 51% 51% no-repeat,
+    radial-gradient(
+        circle at 100% 0,
+        transparent 0 calc(var(--cut-corner-size) - 1px),
+        #000 var(--cut-corner-size)
+      )
+      100% 0 / 51% 51% no-repeat,
+    radial-gradient(
+        circle at 100% 100%,
+        transparent 0 calc(var(--cut-corner-size) - 1px),
+        #000 var(--cut-corner-size)
+      )
+      100% 100% / 51% 51% no-repeat,
+    radial-gradient(
+        circle at 0 100%,
+        transparent 0 calc(var(--cut-corner-size) - 1px),
+        #000 var(--cut-corner-size)
+      )
+      0 100% / 51% 51% no-repeat;
+
+  position: relative;
+  isolation: isolate;
+  border: 0 !important;
+  background: none !important;
+  -webkit-mask: var(--cut-corner-mask);
+  mask: var(--cut-corner-mask);
+}
+
+.cut-corner-frame::before,
+.cut-corner-frame::after {
+  content: '';
+  position: absolute;
+  pointer-events: none;
+  -webkit-mask: var(--cut-corner-mask);
+  mask: var(--cut-corner-mask);
+}
+
+.cut-corner-frame::before {
+  inset: 0;
+  z-index: -2;
+  background: var(--cut-corner-border);
+}
+
+.cut-corner-frame::after {
+  inset: 1px;
+  z-index: -1;
+  background: var(--cut-corner-bg);
+  box-shadow: inset 0 0 0 1px rgb(from var(--color-white) r g b / 4%);
+}
+
+.cut-corner-frame > * {
+  position: relative;
+  z-index: 1;
+}

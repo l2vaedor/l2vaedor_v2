@@ -1,0 +1,73 @@
+/* Base */
+.hero {
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+
+  .hero__title {
+    text-transform: uppercase;
+    font-weight: 400;
+    letter-spacing: var(--heading-letter-spacing);
+    line-height: 1.02;
+
+    strong {
+      font-weight: 400;
+      color: var(--color-accent);
+    }
+  }
+
+  .hero__subtitle {
+    text-transform: uppercase;
+  }
+
+  .hero__ornament {
+    width: min(24rem, 100%);
+    height: 2rem;
+    margin: 1.5rem auto 1.7rem;
+    background: url('../images/icons/ui/separator.png') center/contain;
+    background-repeat: no-repeat;
+    opacity: 0.9;
+  }
+
+  .hero__body {
+    padding: 6rem 0;
+    min-height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .hero__cta {
+    margin-top: 2rem;
+  }
+}
+
+/* Primary */
+.hero--primary {
+  .hero__body {
+    height: 100vh;
+  }
+
+  .hero__title {
+    font-size: var(--heading-size-hero);
+    letter-spacing: var(--heading-letter-spacing);
+  }
+
+  .hero__subtitle {
+    font-size: 1.5rem;
+  }
+}
+
+/* Small */
+.hero--small,
+.hero--sm {
+  text-align: center;
+
+  .hero__title {
+    font-size: var(--heading-size-h1);
+  }
+
+  .hero__subtitle {
+    font-size: 1rem;
+  }
+}

@@ -1,0 +1,117 @@
+@use '../../abstracts' as *;
+
+.section--media {
+  --section-media-image: url('/l2vaedor/public/assets/images/temp/background-5.png');
+
+  isolation: isolate;
+  padding-top: clamp(7rem, 11vw, 12rem);
+  padding-bottom: clamp(8rem, 12vw, 13rem);
+  background:
+    linear-gradient(
+      180deg,
+      rgb(from var(--bg-primary) r g b / 0%),
+      rgb(from var(--bg-secondary) r g b / 62%) 44%,
+      rgb(from var(--bg-primary) r g b / 92%)
+    ),
+    radial-gradient(
+      ellipse at 78% 42%,
+      rgb(from var(--color-primary) r g b / 14%),
+      transparent 34rem
+    );
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0 0;
+    z-index: -1;
+    height: 100%;
+    opacity: 0.22;
+    background: var(--section-media-image) center / cover fixed;
+    mask-image: linear-gradient(
+      90deg,
+      transparent,
+      rgb(from var(--color-black) r g b / 100%) 18%,
+      rgb(from var(--color-black) r g b / 100%) 82%,
+      transparent
+    );
+    filter: saturate(0.75) brightness(0.55);
+  }
+
+  .row {
+    row-gap: clamp(2.5rem, 5vw, 5rem);
+    align-items: center;
+  }
+
+  .section__content {
+    display: grid;
+    gap: 1rem;
+
+    p {
+      margin: 0;
+      color: var(--text-secondary);
+      line-height: 1.8;
+    }
+
+    .btn {
+      justify-self: start;
+      margin-top: 1rem;
+    }
+  }
+
+  .section__media {
+    position: relative;
+    padding: clamp(0.75rem, 2vw, 1.25rem);
+    border: 1px solid rgb(from var(--color-accent) r g b / 22%);
+    background: rgb(from var(--bg-primary) r g b / 46%);
+    box-shadow: var(--shadow-lg);
+
+    &::before {
+      content: '';
+      position: absolute;
+      inset: -1px;
+      border: 1px solid rgb(from var(--color-white) r g b / 5%);
+      pointer-events: none;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      min-height: 24rem;
+      object-fit: cover;
+    }
+  }
+}
+
+.theme-light .section--media {
+  --section-media-image: url('/l2vaedor/public/assets/images/temp/background-5-light.png');
+}
+
+@media (max-width: 992px) {
+  .section--media {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .section--media {
+    padding-top: 4.5rem;
+    padding-bottom: 4.5rem;
+
+    &::before {
+      background-attachment: scroll;
+    }
+
+    .section__content {
+      .btn {
+        justify-self: stretch;
+      }
+    }
+
+    .section__media {
+      img {
+        min-height: 16rem;
+      }
+    }
+  }
+}

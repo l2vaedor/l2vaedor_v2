@@ -1,0 +1,171 @@
+.section--founder-support {
+  background:
+    linear-gradient(
+      180deg,
+      rgb(from var(--bg-primary) r g b / 98%),
+      rgb(from var(--bg-secondary) r g b / 96%)
+    ),
+    radial-gradient(circle at 50% 0%, rgb(from var(--color-primary) r g b / 14%), transparent 32rem);
+}
+
+.founder-pack-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.founder-pack {
+  --founder-accent: var(--rarity-common);
+  --cut-corner-border: color-mix(in srgb, var(--founder-accent) 52%, var(--border-secondary));
+  --cut-corner-bg:
+    linear-gradient(180deg, rgb(from var(--color-white) r g b / 4%), transparent),
+    rgb(from var(--bg-surface) r g b / 84%);
+
+  position: relative;
+  display: grid;
+  gap: 0.85rem;
+  min-width: 0;
+  padding: 1.25rem;
+  overflow: hidden;
+  border: 1px solid color-mix(in srgb, var(--founder-accent) 52%, var(--border-secondary));
+  border-radius: 0.2rem;
+  background:
+    linear-gradient(180deg, rgb(from var(--color-white) r g b / 4%), transparent),
+    rgb(from var(--bg-surface) r g b / 84%);
+  box-shadow:
+    inset 0 0 0 1px rgb(from var(--color-white) r g b / 4%),
+    0 1rem 2rem rgb(from var(--color-black) r g b / 22%);
+}
+
+.founder-pack::before {
+  content: '';
+  position: absolute;
+  inset: 0 0 auto;
+  height: 0.25rem;
+  background: linear-gradient(90deg, transparent, var(--founder-accent), transparent);
+}
+
+.founder-pack--steel {
+  --founder-accent: #8c96a8;
+}
+
+.founder-pack--royal {
+  --founder-accent: var(--color-primary);
+}
+
+.founder-pack--ancient {
+  --founder-accent: var(--color-accent);
+}
+
+.founder-pack__mark {
+  display: grid;
+  place-items: center;
+  width: 3.4rem;
+  height: 3.4rem;
+  border: 1px solid color-mix(in srgb, var(--founder-accent) 70%, var(--color-white) 10%);
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 50% 25%, rgb(from var(--color-white) r g b / 18%), transparent 58%),
+    color-mix(in srgb, var(--founder-accent) 34%, var(--bg-primary));
+  color: color-mix(in srgb, var(--founder-accent) 62%, white);
+  font-family: var(--font-heading);
+  font-size: 1.45rem;
+  line-height: 1;
+  box-shadow: 0 0 1.4rem color-mix(in srgb, var(--founder-accent) 24%, transparent);
+}
+
+.founder-pack__badge,
+.founder-support-info__label {
+  color: color-mix(in srgb, var(--founder-accent, var(--color-accent)) 72%, white);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.founder-pack h2 {
+  margin: 0;
+  color: color-mix(in srgb, var(--founder-accent) 68%, white);
+  font-size: var(--heading-size-h3);
+  text-transform: uppercase;
+}
+
+.founder-pack strong {
+  color: var(--color-text);
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+
+.founder-pack p {
+  margin: 0;
+  color: var(--color-text-secondary);
+}
+
+.founder-pack ul {
+  display: grid;
+  gap: 0.55rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.founder-pack li {
+  position: relative;
+  padding-left: 1.25rem;
+  color: var(--color-text-secondary);
+}
+
+.founder-pack li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.7em;
+  width: 0.45rem;
+  height: 0.45rem;
+  border: 1px solid var(--founder-accent);
+  transform: translateY(-50%) rotate(45deg);
+}
+
+.founder-pack .btn {
+  align-self: end;
+  justify-self: start;
+  margin-top: 0.35rem;
+}
+
+.founder-support-info {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.founder-support-info article {
+  --cut-corner-border: rgb(from var(--color-accent) r g b / 24%);
+  --cut-corner-bg: rgb(from var(--color-white) r g b / 3%);
+
+  min-width: 0;
+  padding: 1.1rem;
+  border: 1px solid rgb(from var(--color-accent) r g b / 24%);
+  border-radius: 0.2rem;
+  background: rgb(from var(--color-white) r g b / 3%);
+}
+
+.founder-support-info h3 {
+  margin: 0.35rem 0 0.5rem;
+  color: color-mix(in srgb, var(--color-accent) 72%, white);
+  font-size: 1.15rem;
+  text-transform: uppercase;
+}
+
+.founder-support-info p {
+  margin: 0;
+  color: var(--color-text-secondary);
+}
+
+@media (max-width: 64rem) {
+  .founder-pack-grid,
+  .founder-support-info {
+    grid-template-columns: 1fr;
+  }
+}

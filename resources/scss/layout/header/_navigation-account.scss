@@ -1,0 +1,228 @@
+/* ----------------------------------------
+   Navigation Account
+---------------------------------------- */
+
+.nav__item--account {
+  margin-left: var(--spacing-md);
+}
+
+/* ----------------------------------------
+   Account Link
+---------------------------------------- */
+
+.nav__link--account {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+
+  padding-inline: 0.25rem;
+}
+
+.nav__link--account::after {
+  display: none;
+}
+
+/* ----------------------------------------
+   Avatar
+---------------------------------------- */
+
+.nav__icon {
+  position: relative;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 2.75rem;
+  height: 2.75rem;
+
+  border: 1px solid rgb(from var(--color-accent) r g b / 20%);
+  border-radius: 50%;
+
+  background: linear-gradient(180deg, rgb(34 45 72 / 95%), rgb(18 24 42 / 95%));
+
+  transition:
+    border-color 0.25s ease,
+    background 0.25s ease,
+    transform 0.25s ease;
+}
+
+.nav__icon::before {
+  content: '';
+
+  position: absolute;
+  inset: 0.2rem;
+
+  border: 1px solid rgb(from var(--color-white) r g b / 8%);
+  border-radius: inherit;
+
+  pointer-events: none;
+}
+
+.nav__icon svg {
+  width: 1rem;
+  height: 1rem;
+
+  stroke: currentColor;
+  stroke-width: 1.75;
+
+  transition: transform 0.25s ease;
+}
+
+.nav__avatar {
+  width: calc(100% - 0.35rem);
+  height: calc(100% - 0.35rem);
+  border-radius: inherit;
+  object-fit: cover;
+}
+
+/* ----------------------------------------
+   Username
+---------------------------------------- */
+
+.nav__account-name {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  line-height: 1.2;
+}
+
+.nav__account-label {
+  color: rgb(from var(--color-white) r g b / 45%);
+
+  font-size: 0.625rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.nav__account-username {
+  color: var(--color-text);
+
+  font-size: 0.875rem;
+  font-weight: 500;
+
+  transition: color 0.25s ease;
+}
+
+/* ----------------------------------------
+   Hover
+---------------------------------------- */
+
+.nav__link--account:hover .nav__icon,
+.nav__item--account:hover .nav__icon {
+  border-color: rgb(from var(--color-accent) r g b / 60%);
+
+  background: linear-gradient(180deg, rgb(46 64 102 / 95%), rgb(24 34 58 / 95%));
+
+  transform: translateY(-1px);
+}
+
+.nav__link--account:hover .nav__icon svg,
+.nav__link--account:hover .nav__avatar {
+  transform: scale(1.05);
+}
+
+.nav__link--account:hover .nav__account-username {
+  color: var(--color-accent);
+}
+
+/* ----------------------------------------
+   Status Indicator
+---------------------------------------- */
+
+.nav__icon-status {
+  position: absolute;
+  right: 0.15rem;
+  bottom: 0.15rem;
+
+  width: 0.55rem;
+  height: 0.55rem;
+
+  border: 2px solid rgb(18 24 42 / 100%);
+  border-radius: 50%;
+
+  background: var(--success-light);
+}
+
+.nav__icon-status--offline {
+  background: var(--text-muted);
+}
+
+.nav__icon-status--busy {
+  background: var(--danger-light);
+}
+
+.nav__icon-status--away {
+  background: var(--warning-light);
+}
+
+/* ----------------------------------------
+   Notifications
+---------------------------------------- */
+
+.nav__account-badge {
+  position: absolute;
+  top: -0.15rem;
+  right: -0.15rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 1rem;
+  height: 1rem;
+  padding-inline: 0.2rem;
+
+  border-radius: 999px;
+
+  background: var(--color-accent);
+
+  color: var(--bg-primary);
+
+  font-size: 0.625rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+/* ----------------------------------------
+   Logged Out
+---------------------------------------- */
+
+.nav__item--guest .nav__link--account {
+  gap: 0.5rem;
+}
+
+.nav__item--guest .nav__account-name {
+  display: none;
+}
+
+/* ----------------------------------------
+   Responsive
+---------------------------------------- */
+
+@media (max-width: 1400px) {
+  .nav__account-name {
+    display: none;
+  }
+
+  .nav__link--account {
+    gap: 0;
+  }
+}
+
+@media (max-width: 992px) {
+  .nav__item--account {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .nav__link--account {
+    justify-content: flex-start;
+  }
+
+  .nav__account-name {
+    display: flex;
+  }
+}

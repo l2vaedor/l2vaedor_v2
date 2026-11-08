@@ -1,0 +1,72 @@
+$font-heading: 'Cinzel', serif;
+$font-body: 'Nunito', sans-serif;
+
+body {
+  font-family: var(--font-body);
+  font-size: var(--font-size-sm);
+  line-height: var(--line-height-body);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: var(--line-height-heading);
+  margin-bottom: 2rem;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-heading);
+}
+
+h1 {
+  font-size: var(--heading-size-h1);
+  letter-spacing: var(--heading-letter-spacing);
+}
+h2 {
+  font-size: var(--heading-size-h2);
+  letter-spacing: var(--heading-letter-spacing);
+}
+h3 {
+  font-size: var(--heading-size-h3);
+  letter-spacing: var(--heading-letter-spacing);
+}
+h4 {
+  font-size: 2.2rem;
+}
+h5 {
+  font-size: 1rem;
+}
+h6 {
+  font-size: 0.85rem;
+}
+
+ul,
+ol,
+p {
+  margin-bottom: 1rem;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+@media (max-width: 48rem) {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    line-height: 1.12;
+    margin-bottom: 1.2rem;
+  }
+}

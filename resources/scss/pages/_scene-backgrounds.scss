@@ -1,0 +1,11 @@
+.ranking-section--rankings {
+  position: relative;
+  isolation: isolate;
+  border-block: 1px solid rgb(from var(--color-accent) r g b / 16%);
+  background:
+    linear-gradient(180deg, rgb(from var(--bg-primary) r g b / 72%), rgb(from var(--bg-primary) r g b / 88%)),
+    radial-gradient(circle at 50% 20%, rgb(from var(--color-primary) r g b / 12%), transparent 38rem),
+    url('/l2vaedor/public/assets/images/temp/bg-rankings-vaedor.png') center / cover no-repeat;
+  background-size: 100% auto;
+  background-position: top center;
+}

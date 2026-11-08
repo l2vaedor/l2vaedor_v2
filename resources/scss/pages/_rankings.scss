@@ -1,0 +1,564 @@
+.ranking-hero {
+  position: relative;
+  min-height: clamp(32rem, 62vh, 43rem);
+  display: grid;
+  align-items: center;
+  overflow: hidden;
+  border-bottom: 1px solid rgb(from var(--color-accent) r g b / 20%);
+  background-size: cover;
+  background-position: center;
+  isolation: isolate;
+}
+
+.ranking-hero::before,
+.ranking-hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+}
+
+.ranking-hero::before {
+  background:
+    linear-gradient(
+      90deg,
+      rgb(4 7 11 / 96%),
+      rgb(from var(--bg-primary) r g b / 72%) 44%,
+      rgb(from var(--bg-primary) r g b / 28%)
+    ),
+    radial-gradient(
+      ellipse at 70% 18%,
+      rgb(from var(--color-primary) r g b / 30%),
+      transparent 24rem
+    );
+}
+
+.ranking-hero::after {
+  inset: auto 0 0;
+  height: 48%;
+  background: linear-gradient(180deg, rgb(from var(--bg-primary) r g b / 0%), var(--bg-primary));
+}
+
+.ranking-hero__content {
+  max-width: 43rem;
+  padding-top: 8rem;
+  padding-bottom: 5rem;
+}
+
+.ranking-hero h1 {
+  margin: 0;
+  color: var(--text-primary);
+  font-family: var(--font-heading);
+  font-size: var(--heading-size-hero);
+  font-weight: 400;
+  line-height: 0.95;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.ranking-hero p:not(.legacy-kicker) {
+  max-width: 34rem;
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: 1.08rem;
+  line-height: 1.8;
+}
+
+.ranking-section {
+  padding: clamp(4rem, 8vw, 7rem) 0;
+  background:
+    radial-gradient(
+      ellipse at 50% 0%,
+      rgb(from var(--color-primary) r g b / 14%),
+      transparent 34rem
+    ),
+    linear-gradient(180deg, var(--bg-primary), var(--bg-primary));
+}
+
+.ranking-status,
+.ranking-board,
+.ranking-champion,
+.clan-card {
+  --cut-corner-border: rgb(from var(--color-accent) r g b / 32%);
+  --cut-corner-bg: linear-gradient(
+    180deg,
+    rgb(from var(--bg-surface) r g b / 90%),
+    rgb(from var(--bg-primary) r g b / 97%)
+  );
+
+  border: 1px solid rgb(from var(--color-accent) r g b / 32%);
+  border-radius: 0.25rem;
+  background: linear-gradient(
+    180deg,
+    rgb(from var(--bg-surface) r g b / 90%),
+    rgb(from var(--bg-primary) r g b / 97%)
+  );
+  box-shadow:
+    inset 0 0 2rem rgb(from var(--color-primary) r g b / 8%),
+    var(--shadow-md);
+}
+
+.ranking-status {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 1rem;
+  align-items: center;
+  margin-bottom: 2rem;
+  padding: 1rem 1.25rem;
+  color: var(--text-secondary);
+}
+
+.ranking-status span {
+  color: color-mix(in srgb, var(--color-accent) 72%, white);
+  font-family: var(--font-heading);
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.ranking-status strong {
+  font-weight: 400;
+  text-align: center;
+}
+
+.ranking-summary {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.ranking-summary > div,
+.ranking-filters,
+.ranking-tabs,
+.ranking-empty,
+.castle-card {
+  --cut-corner-border: rgb(from var(--color-accent) r g b / 24%);
+  --cut-corner-bg: rgb(from var(--bg-primary) r g b / 58%);
+
+  border: 1px solid rgb(from var(--color-accent) r g b / 24%);
+  border-radius: 0.25rem;
+  background: rgb(from var(--bg-primary) r g b / 58%);
+  box-shadow: inset 0 0 1.4rem rgb(from var(--color-primary) r g b / 7%);
+}
+
+.ranking-summary > div {
+  display: grid;
+  gap: 0.25rem;
+  padding: 1rem;
+  text-align: center;
+}
+
+.ranking-summary span,
+.ranking-filters span {
+  color: var(--text-muted);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.ranking-summary strong {
+  color: color-mix(in srgb, var(--color-accent) 76%, white);
+  font-family: var(--font-heading);
+  font-size: 1.6rem;
+  font-weight: 400;
+}
+
+.ranking-filters {
+  display: grid;
+  grid-template-columns: minmax(14rem, 1fr) minmax(10rem, 0.6fr) minmax(12rem, 0.8fr) auto;
+  gap: 1rem;
+  align-items: end;
+  margin-bottom: 1rem;
+  padding: 1rem;
+}
+
+.ranking-filters label {
+  display: grid;
+  gap: 0.4rem;
+}
+
+.ranking-filters input,
+.ranking-filters select {
+  min-height: 3rem;
+}
+
+.ranking-filters__actions {
+  display: flex;
+  gap: 0.65rem;
+}
+
+.ranking-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  margin-bottom: 2rem;
+  padding: 0.75rem;
+}
+
+.ranking-tabs button {
+  padding: 0.55rem 0.8rem;
+  border: 1px solid rgb(from var(--color-white) r g b / 9%);
+  background: transparent;
+  color: var(--text-secondary);
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.ranking-tabs button:hover,
+.ranking-tabs button:focus-visible,
+.ranking-tabs button.is-active {
+  border-color: rgb(from var(--color-accent) r g b / 40%);
+  color: var(--color-accent);
+}
+
+.ranking-tabs button.is-active {
+  background: rgb(from var(--color-primary) r g b / 14%);
+}
+
+.ranking-panels {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.ranking-panel {
+  display: none;
+  scroll-margin-top: 7rem;
+}
+
+.ranking-panel.is-active {
+  display: block;
+}
+
+.ranking-showcase {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.25rem;
+  margin-bottom: 2rem;
+}
+
+.ranking-champion {
+  position: relative;
+  min-height: 19rem;
+  padding: 1.5rem;
+  text-align: center;
+  overflow: hidden;
+}
+
+.ranking-champion--1 {
+  transform: translateY(-0.7rem);
+}
+
+.ranking-champion__place {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  color: color-mix(in srgb, var(--color-accent) 72%, white);
+  font-family: var(--font-heading);
+  font-size: 1.4rem;
+}
+
+.ranking-champion img {
+  width: 7rem;
+  height: 7rem;
+  margin-top: 1rem;
+  object-fit: contain;
+}
+
+.ranking-champion h2 {
+  margin: 0.8rem 0 0.35rem;
+  color: var(--text-primary);
+  font-family: var(--font-heading);
+  font-size: var(--heading-size-h3);
+  font-weight: 400;
+}
+
+.ranking-champion p {
+  margin: 0;
+  color: var(--text-secondary);
+}
+
+.ranking-champion dl,
+.clan-card dl {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem;
+  margin: 1.2rem 0 0;
+}
+
+.ranking-champion dt,
+.clan-card dt {
+  color: var(--text-muted);
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.ranking-champion dd,
+.clan-card dd {
+  margin: 0.25rem 0 0;
+  color: color-mix(in srgb, var(--color-accent) 72%, white);
+  font-family: var(--font-heading);
+}
+
+.ranking-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+
+.ranking-grid--compact {
+  align-items: start;
+}
+
+.ranking-board {
+  padding: clamp(1.2rem, 3vw, 1.75rem);
+}
+
+.ranking-board--wide {
+  margin-top: 1.5rem;
+}
+
+.ranking-board__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.ranking-board__header h2 {
+  margin: 0;
+  color: var(--text-primary);
+  font-family: var(--font-heading);
+  font-size: var(--heading-size-h2);
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.ranking-board__header img {
+  width: 4.6rem;
+  height: 4.6rem;
+  object-fit: contain;
+}
+
+.ranking-table {
+  display: grid;
+  gap: 0.65rem;
+}
+
+.ranking-row {
+  display: grid;
+  grid-template-columns: 2.6rem minmax(0, 1fr) auto auto minmax(6rem, auto);
+  gap: 0.9rem;
+  align-items: center;
+  min-height: 4.35rem;
+  padding: 0.8rem 0.95rem;
+  border: 1px solid rgb(from var(--color-white) r g b / 8%);
+  background: rgb(from var(--bg-primary) r g b / 54%);
+  color: var(--text-secondary);
+}
+
+.ranking-row:hover {
+  border-color: rgb(from var(--color-accent) r g b / 44%);
+  background: rgb(from var(--color-primary) r g b / 12%);
+}
+
+.ranking-row__badges {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 0.35rem;
+}
+
+.ranking-badge {
+  display: inline-grid;
+  place-items: center;
+  min-height: 1.6rem;
+  padding: 0 0.45rem;
+  border: 1px solid rgb(from var(--color-accent) r g b / 28%);
+  color: color-mix(in srgb, var(--color-accent) 70%, white);
+  font-size: 0.68rem;
+  font-style: normal;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.ranking-badge--online {
+  border-color: rgb(from var(--success) r g b / 35%);
+  color: color-mix(in srgb, var(--success) 70%, white);
+}
+
+.ranking-row__rank {
+  display: grid;
+  place-items: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  border: 1px solid rgb(from var(--color-accent) r g b / 45%);
+  color: color-mix(in srgb, var(--color-accent) 72%, white);
+  font-family: var(--font-heading);
+}
+
+.ranking-row strong,
+.clan-card h3 {
+  display: block;
+  color: var(--text-primary);
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 400;
+}
+
+.ranking-row__name {
+  color: inherit;
+  text-decoration: none;
+}
+
+.ranking-row__name:hover,
+.ranking-row__name:focus-visible {
+  color: color-mix(in srgb, var(--color-accent) 78%, white);
+  text-decoration: underline;
+}
+
+.ranking-row small,
+.clan-card p {
+  display: block;
+  margin-top: 0.2rem;
+  color: var(--text-muted);
+}
+
+.clan-ranking {
+  display: grid;
+  gap: 0.85rem;
+}
+
+.ranking-empty {
+  padding: 1rem;
+  color: var(--text-secondary);
+}
+
+.ranking-subtitle {
+  margin: 0 0 0.8rem;
+  color: var(--text-primary);
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.clan-card {
+  display: grid;
+  grid-template-columns: 2.6rem minmax(0, 1fr) minmax(18rem, 0.8fr);
+  gap: 1rem;
+  align-items: center;
+  padding: 1rem;
+}
+
+.clan-card h3,
+.clan-card p {
+  margin: 0;
+}
+
+.clan-card dl {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin: 0;
+  text-align: center;
+}
+
+.castle-ranking {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.85rem;
+}
+
+.castle-card {
+  display: grid;
+  gap: 0.8rem;
+  padding: 1rem;
+}
+
+.castle-card h3 {
+  margin: 0;
+  color: var(--text-primary);
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.castle-card dl {
+  display: grid;
+  gap: 0.55rem;
+  margin: 0;
+}
+
+.castle-card dt {
+  color: var(--text-muted);
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.castle-card dd {
+  margin: 0.15rem 0 0;
+  color: color-mix(in srgb, var(--color-accent) 72%, white);
+}
+
+@media (max-width: 1080px) {
+  .ranking-grid,
+  .ranking-showcase,
+  .clan-card,
+  .ranking-summary,
+  .ranking-filters,
+  .castle-ranking {
+    grid-template-columns: 1fr;
+  }
+
+  .ranking-champion--1 {
+    transform: none;
+  }
+}
+
+@media (max-width: 720px) {
+  .ranking-hero {
+    min-height: auto;
+  }
+
+  .ranking-hero__content {
+    padding-top: 7rem;
+    padding-bottom: 4rem;
+  }
+
+  .ranking-status,
+  .ranking-row,
+  .clan-card dl {
+    grid-template-columns: 1fr;
+  }
+
+  .ranking-row__badges,
+  .ranking-filters__actions {
+    justify-content: flex-start;
+  }
+
+  .ranking-status strong {
+    text-align: left;
+  }
+
+  .ranking-row {
+    align-items: start;
+  }
+
+  .ranking-board__header {
+    align-items: flex-start;
+  }
+
+  .ranking-board__header img {
+    width: 3.5rem;
+    height: 3.5rem;
+  }
+}

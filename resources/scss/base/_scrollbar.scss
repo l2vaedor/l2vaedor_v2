@@ -1,0 +1,41 @@
+/* ----------------------------------------
+   Scrollbar
+---------------------------------------- */
+
+html {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-accent) rgb(from var(--color-white) r g b / 5%);
+}
+
+::-webkit-scrollbar {
+  width: 0.875rem;
+  height: 0.875rem;
+}
+
+::-webkit-scrollbar-track {
+  background: rgb(from var(--color-white) r g b / 5%);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(
+    180deg,
+    color-mix(in srgb, var(--color-accent) 72%, white),
+    var(--color-accent)
+  );
+  border: 3px solid transparent;
+  border-radius: 999px;
+  background-clip: content-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(
+    180deg,
+    var(--color-accent),
+    color-mix(in srgb, var(--color-accent) 68%, black)
+  );
+  background-clip: content-box;
+}
+
+::-webkit-scrollbar-corner {
+  background: transparent;
+}

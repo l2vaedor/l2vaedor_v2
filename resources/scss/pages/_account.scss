@@ -1,0 +1,1269 @@
+.section--account,
+.section--account-auth {
+  isolation: isolate;
+  padding-top: clamp(5rem, 8vw, 8rem);
+  background:
+    radial-gradient(
+      circle at 18% 32%,
+      rgb(from var(--color-primary) r g b / 30%),
+      transparent 15rem
+    ),
+    radial-gradient(
+      circle at 80% 18%,
+      rgb(from var(--color-primary) r g b / 16%),
+      transparent 18rem
+    ),
+    linear-gradient(
+      180deg,
+      rgb(from var(--bg-primary) r g b / 58%),
+      rgb(from var(--bg-primary) r g b / 94%) 78%,
+      var(--bg-primary)
+    ),
+    url('/l2vaedor/public/assets/images/temp/background-5.png') center top / 100% auto no-repeat;
+}
+
+.section--account {
+  overflow: visible;
+}
+
+.section--account-auth {
+  overflow: hidden;
+}
+
+.section--account::before,
+.section--account-auth::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  pointer-events: none;
+  background:
+    linear-gradient(90deg, var(--bg-primary), transparent 24%, transparent 76%, var(--bg-primary)),
+    radial-gradient(
+      circle at 18% 68%,
+      rgb(from var(--color-primary) r g b / 24%),
+      transparent 13rem
+    );
+}
+
+.section--account::after,
+.section--account-auth::after {
+  content: '';
+  position: absolute;
+  left: clamp(0.75rem, 6vw, 5rem);
+  bottom: clamp(3rem, 9vw, 8rem);
+  z-index: -1;
+  width: clamp(7rem, 13vw, 13rem);
+  aspect-ratio: 1;
+  border: 1px solid rgb(from var(--color-primary) r g b / 24%);
+  border-radius: 50%;
+  pointer-events: none;
+  background:
+    radial-gradient(circle, rgb(from var(--color-primary) r g b / 72%) 0 8%, transparent 9%),
+    radial-gradient(circle, rgb(from var(--color-primary) r g b / 16%) 0 29%, transparent 30%),
+    linear-gradient(180deg, rgb(from var(--color-white) r g b / 6%), transparent);
+  box-shadow:
+    0 0 2.4rem rgb(from var(--color-primary) r g b / 30%),
+    inset 0 0 1.6rem rgb(from var(--color-primary) r g b / 20%);
+  opacity: 0.48;
+}
+
+.section--account > .container,
+.section--account-auth > .container {
+  position: relative;
+  z-index: 1;
+}
+
+.section--account-auth .section__subtitle {
+  justify-content: center;
+}
+
+.account-sidebar-column {
+  align-self: stretch;
+}
+
+.account-sidebar {
+  display: grid;
+  gap: 1rem;
+  position: sticky;
+  top: calc(var(--header-height, 5rem) + 1rem);
+  align-self: start;
+}
+
+.account-sidebar__brand,
+.account-sidebar__callout {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgb(from var(--color-accent) r g b / 28%);
+  border-radius: 0.2rem;
+  box-shadow:
+    inset 0 0 0 1px rgb(from var(--color-white) r g b / 5%),
+    0 1rem 2rem rgb(from var(--color-black) r g b / 22%);
+  backdrop-filter: blur(0.35rem);
+}
+
+.account-sidebar__brand {
+  display: grid;
+  justify-items: center;
+  gap: 0.25rem;
+  padding: 1.5rem 1rem;
+  text-align: center;
+}
+
+.section--account-auth .card {
+  border: 1px solid rgb(from var(--color-accent) r g b / 20%);
+  background:
+    linear-gradient(
+      180deg,
+      rgb(from var(--bg-primary) r g b / 70%),
+      rgb(from var(--bg-primary) r g b / 84%)
+    ),
+    radial-gradient(circle at top, rgb(from var(--color-primary) r g b / 18%), transparent 17rem);
+  box-shadow:
+    inset 0 0 0 1px rgb(from var(--color-white) r g b / 5%),
+    inset 0 0 2rem rgb(from var(--color-primary) r g b / 8%),
+    0 1rem 2.2rem rgb(from var(--color-black) r g b / 30%);
+  backdrop-filter: blur(0.35rem);
+}
+
+.section--account-auth .card .card {
+  background: linear-gradient(
+    180deg,
+    rgb(from var(--bg-primary) r g b / 78%),
+    rgb(from var(--bg-primary) r g b / 88%)
+  );
+}
+
+.account-sidebar__brand img {
+  width: 6.5rem;
+  filter: drop-shadow(0 0 1rem rgb(from var(--color-primary) r g b / 42%));
+}
+
+.account-sidebar__brand img.account-sidebar__avatar {
+  height: 6.5rem;
+  border: 1px solid rgb(from var(--color-accent) r g b / 35%);
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.account-sidebar__brand span {
+  color: color-mix(in srgb, var(--color-accent) 72%, white);
+  font-family: var(--font-heading);
+  font-size: 1.85rem;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.account-sidebar__brand strong {
+  color: var(--color-text-secondary);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.account-sidebar__callout {
+  display: grid;
+  gap: 0.35rem;
+  min-height: 10rem;
+  align-content: end;
+  padding: 1rem;
+  background:
+    linear-gradient(
+      180deg,
+      rgb(from var(--bg-primary) r g b / 42%),
+      rgb(from var(--bg-primary) r g b / 95%)
+    ),
+    url('../images/temp/hero-image.png') center / cover no-repeat;
+}
+
+.account-sidebar__callout strong {
+  color: color-mix(in srgb, var(--color-accent) 72%, white);
+  font-family: var(--font-heading);
+  text-transform: uppercase;
+}
+
+.account-sidebar__callout span {
+  color: var(--color-text-secondary);
+  font-size: 0.9rem;
+}
+
+.account-nav {
+  overflow: hidden;
+  border: 0.2rem solid var(--border-secondary);
+  border-radius: 0.2rem;
+  background:
+    linear-gradient(
+      180deg,
+      rgb(from var(--bg-primary) r g b / 96%),
+      rgb(from var(--bg-primary) r g b / 98%)
+    ),
+    var(--bg-surface);
+}
+
+.account-nav__list {
+  display: grid;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.account-nav__item + .account-nav__item {
+  border-top: 1px solid var(--border-secondary);
+}
+
+.account-nav__link,
+.account-nav__logout {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  min-height: 3.25rem;
+  padding: 0.5rem 0.5rem;
+  color: var(--color-text-secondary);
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition:
+    background 0.25s ease,
+    color 0.25s ease;
+}
+
+.account-nav__icon {
+  width: 50px;
+  height: 50px;
+  flex: 0 0 1.5rem;
+  object-fit: contain;
+}
+
+.account-nav__link:hover,
+.account-nav__link:focus-visible,
+.account-nav__logout:hover,
+.account-nav__logout:focus-visible,
+.account-nav__link.is-active {
+  color: var(--color-primary);
+  background: var(--bg-secondary);
+}
+
+.account-nav__link:focus-visible,
+.account-nav__logout:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: -2px;
+}
+
+.account-nav__footer {
+  border-top: 1px solid var(--border-secondary);
+}
+
+.account-nav__logout {
+  color: var(--danger);
+}
+
+.account-shell {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.account-shell__header {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.account-shell__header h1 {
+  font-size: var(--heading-size-h1);
+}
+
+.account-shell__header p {
+  color: var(--color-text-secondary);
+}
+
+.account-stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.account-filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  padding: 0.85rem;
+  border: 1px solid rgb(from var(--color-accent) r g b / 24%);
+  border-radius: 0.2rem;
+  background: rgb(from var(--color-white) r g b / 3%);
+}
+
+.account-filter a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.45rem;
+  padding: 0.55rem 0.85rem;
+  border: 1px solid rgb(from var(--color-white) r g b / 10%);
+  border-radius: 0.2rem;
+  color: var(--color-text-secondary);
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.account-filter a:hover,
+.account-filter a:focus-visible,
+.account-filter a.is-active {
+  border-color: rgb(from var(--color-accent) r g b / 48%);
+  background: rgb(from var(--color-accent) r g b / 10%);
+  color: color-mix(in srgb, var(--color-accent) 72%, white);
+}
+
+.section--account-dashboard {
+  padding-bottom: 3rem;
+}
+
+.account-dashboard {
+  gap: 1rem;
+}
+
+.account-dashboard__hero {
+  min-height: 9rem;
+  display: flex;
+  align-items: end;
+  padding: 1.5rem;
+  border: 1px solid rgb(from var(--color-accent) r g b / 24%);
+  border-radius: 0.2rem;
+  background:
+    linear-gradient(
+      90deg,
+      rgb(from var(--bg-primary) r g b / 98%) 0%,
+      rgb(from var(--bg-primary) r g b / 72%) 45%,
+      rgb(from var(--bg-primary) r g b / 18%) 100%
+    ),
+    url('../images/temp/hero-image.png') right center / cover no-repeat;
+  box-shadow: inset 0 0 0 1px rgb(from var(--color-white) r g b / 4%);
+}
+
+.account-dashboard__hero h1 {
+  margin: 0;
+  color: color-mix(in srgb, var(--color-accent) 72%, white);
+  font-size: var(--heading-size-h1);
+  text-transform: uppercase;
+}
+
+.account-dashboard__hero p:last-child {
+  max-width: 40rem;
+  margin: 0.4rem 0 0;
+  color: var(--color-text-secondary);
+}
+
+.account-dashboard__alert {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding: 0.85rem 1rem;
+  border: 1px solid rgb(from var(--danger) r g b / 55%);
+  border-radius: 0.2rem;
+  background: rgb(from var(--danger) r g b / 12%);
+  color: var(--color-text-secondary);
+}
+
+.account-dashboard__alert strong {
+  color: color-mix(in srgb, var(--danger) 58%, white);
+}
+
+.account-dashboard__grid {
+}
+
+.account-page-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.account-panel {
+  --cut-corner-border: rgb(from var(--color-accent) r g b / 28%);
+  --cut-corner-bg:
+    linear-gradient(
+      145deg,
+      rgb(from var(--bg-secondary) r g b / 96%),
+      rgb(from var(--bg-primary) r g b / 98%)
+    ),
+    radial-gradient(
+      circle at top right,
+      rgb(from var(--color-primary) r g b / 16%),
+      transparent 32rem
+    );
+
+  position: relative;
+  overflow: hidden;
+  min-width: 0;
+  margin-bottom: 1rem;
+  padding: 1.25rem;
+  border: 1px solid rgb(from var(--color-accent) r g b / 28%);
+  border-radius: 0.2rem;
+  background:
+    linear-gradient(
+      145deg,
+      rgb(from var(--bg-secondary) r g b / 96%),
+      rgb(from var(--bg-primary) r g b / 98%)
+    ),
+    radial-gradient(
+      circle at top right,
+      rgb(from var(--color-primary) r g b / 16%),
+      transparent 32rem
+    );
+  box-shadow:
+    inset 0 0 0 1px rgb(from var(--color-white) r g b / 4%),
+    0 1rem 2rem rgb(from var(--color-black) r g b / 20%);
+}
+
+.account-panel--wide {
+  grid-column: span 1;
+}
+
+.account-panel__header {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: 0.75rem;
+  padding-bottom: 0.9rem;
+  border-bottom: 1px solid rgb(from var(--color-white) r g b / 8%);
+}
+
+.account-panel__header--split {
+  grid-template-columns: auto 1fr auto;
+}
+
+.account-panel__header h2 {
+  margin: 0;
+  color: color-mix(in srgb, var(--color-accent) 72%, white);
+  font-size: var(--heading-size-h3);
+  text-transform: uppercase;
+}
+
+.account-panel__header a,
+.account-news a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  color: var(--color-accent);
+  font-size: 0.82rem;
+  text-decoration: none;
+}
+
+.account-panel__title-icon {
+  color: var(--color-accent);
+}
+
+.account-dashboard__icon {
+  width: 1.2rem;
+  height: 1.2rem;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.75;
+}
+
+.account-page-icon {
+  display: inline-grid;
+  place-items: center;
+  width: 2rem;
+  height: 2rem;
+  border: 1px solid rgb(from var(--color-accent) r g b / 35%);
+  border-radius: 0.2rem;
+  background: rgb(from var(--color-accent) r g b / 8%);
+  color: var(--color-accent);
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+}
+
+.account-status {
+  display: grid;
+  grid-template-columns: 9rem minmax(0, 1fr);
+  gap: 1.25rem;
+  padding-top: 1.25rem;
+}
+
+.account-status__crest {
+  display: grid;
+  place-items: center;
+  min-height: 9rem;
+}
+
+.account-status__crest img {
+  width: min(8rem, 100%);
+  filter: drop-shadow(0 0 1rem rgb(from var(--color-primary) r g b / 38%));
+}
+
+.account-status__list {
+  display: grid;
+  gap: 0.7rem;
+  margin: 0;
+}
+
+.account-status__list div {
+  display: grid;
+  grid-template-columns: minmax(7rem, 0.8fr) minmax(0, 1.2fr);
+  gap: 1rem;
+  align-items: center;
+}
+
+.account-status__list dt {
+  color: var(--color-text-secondary);
+  font-size: 0.82rem;
+}
+
+.account-status__list dd {
+  min-width: 0;
+  margin: 0;
+  color: var(--color-text);
+  font-weight: 400;
+}
+
+.account-pill {
+  display: inline-flex;
+  align-items: center;
+  margin-left: 0.35rem;
+  padding: 0.18rem 0.45rem;
+  border: 1px solid rgb(from var(--color-white) r g b / 14%);
+  border-radius: 0.2rem;
+  color: var(--color-text-secondary);
+  font-size: 0.68rem;
+  font-weight: 700;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+.account-pill--success {
+  border-color: rgb(from var(--success) r g b / 45%);
+  background: rgb(from var(--success) r g b / 12%);
+  color: color-mix(in srgb, var(--success) 72%, white);
+}
+
+.account-pill--warning {
+  border-color: rgb(from var(--warning) r g b / 55%);
+  background: rgb(from var(--warning) r g b / 12%);
+  color: var(--warning);
+}
+
+.account-pill--muted {
+  background: rgb(from var(--color-white) r g b / 4%);
+}
+
+.account-panel__footer,
+.account-panel__actions {
+  margin-top: 1.25rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgb(from var(--color-white) r g b / 8%);
+}
+
+.account-sync {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.account-sync > div {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  min-width: 0;
+}
+
+.account-sync strong,
+.account-sync span {
+  display: block;
+}
+
+.account-sync strong {
+  color: color-mix(in srgb, var(--success) 72%, white);
+}
+
+.account-sync span {
+  color: var(--color-text-secondary);
+  font-size: 0.82rem;
+}
+
+.account-sync__status {
+  display: grid;
+  place-items: center;
+  width: 2.3rem;
+  height: 2.3rem;
+  flex: 0 0 2.3rem;
+  border: 1px solid rgb(from var(--success) r g b / 45%);
+  border-radius: 50%;
+  color: color-mix(in srgb, var(--success) 72%, white);
+}
+
+.account-action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.7rem;
+  padding: 0.65rem 1.1rem;
+  border: 1px solid rgb(from var(--color-accent) r g b / 32%);
+  border-radius: 0.2rem;
+  background: rgb(from var(--color-white) r g b / 3%);
+  color: color-mix(in srgb, var(--color-accent) 72%, white);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.account-action:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+.account-note {
+  margin-top: 0.75rem;
+  padding: 0.9rem 1rem;
+  border: 1px solid rgb(from var(--color-white) r g b / 8%);
+  border-radius: 0.2rem;
+  background: rgb(from var(--color-white) r g b / 3%);
+  color: var(--color-text-secondary);
+}
+
+.account-note a {
+  color: var(--color-accent);
+  word-break: break-all;
+}
+
+.account-note--success {
+  border-color: rgb(from var(--success) r g b / 35%);
+  background: rgb(from var(--success) r g b / 10%);
+}
+
+.account-note--warning {
+  border-color: rgb(from var(--warning) r g b / 42%);
+  background: rgb(from var(--warning) r g b / 12%);
+}
+
+.account-note--error {
+  border-color: rgb(from var(--danger) r g b / 42%);
+  background: rgb(from var(--danger) r g b / 12%);
+}
+
+.account-note--split {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.account-action--primary {
+  background: linear-gradient(
+    180deg,
+    rgb(from color-mix(in srgb, var(--color-primary) 70%, black) r g b / 74%),
+    color-mix(in srgb, color-mix(in srgb, var(--color-primary) 70%, black) 64%, var(--color-black))
+  );
+  border-color: rgb(from var(--color-primary) r g b / 65%);
+}
+
+.account-metrics {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0;
+  padding: 1rem 0;
+}
+
+.account-metrics > div {
+  display: grid;
+  gap: 0.35rem;
+  padding-inline: 1rem;
+  border-left: 1px solid rgb(from var(--color-white) r g b / 8%);
+}
+
+.account-metrics > div:first-child {
+  padding-left: 0;
+  border-left: 0;
+}
+
+.account-metrics span {
+  color: var(--color-text-secondary);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+}
+
+.account-metrics strong {
+  color: color-mix(in srgb, var(--color-accent) 72%, white);
+  font-family: var(--font-heading);
+  font-size: 1.65rem;
+  font-weight: 400;
+}
+
+.account-character-list,
+.account-game-account-list,
+.account-reward-list,
+.account-timeline,
+.account-security {
+  display: grid;
+  gap: 0.55rem;
+}
+
+.account-character-row {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto auto;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 0.65rem;
+  border: 1px solid rgb(from var(--color-white) r g b / 8%);
+  border-radius: 0.2rem;
+  background: rgb(from var(--color-white) r g b / 2%);
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+.account-character-row__portrait {
+  display: grid;
+  place-items: center;
+  width: 3.2rem;
+  height: 3.2rem;
+  overflow: hidden;
+  border: 1px solid color-mix(in srgb, var(--race-color) 60%, transparent);
+  border-radius: 50%;
+  background: rgb(from var(--color-white) r g b / 4%);
+}
+
+.account-character-row__portrait img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.account-character-row strong,
+.account-character-row small {
+  display: block;
+}
+
+.account-character-row strong {
+  color: var(--color-accent);
+  font-size: 1rem;
+}
+
+.account-character-row small {
+  color: var(--color-text-secondary);
+}
+
+.account-character-row__level {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  color: var(--color-text-secondary);
+  font-size: 0.84rem;
+  white-space: nowrap;
+}
+
+.account-character-row__level .account-dashboard__icon,
+.account-character-row__arrow .account-dashboard__icon {
+  color: var(--color-accent);
+}
+
+.account-character-row__arrow .account-dashboard__icon {
+  width: 1rem;
+  height: 1rem;
+}
+
+.account-game-account-list {
+  padding-top: 1rem;
+}
+
+.account-game-account-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 0.75rem;
+  border: 1px solid rgb(from var(--color-white) r g b / 8%);
+  border-radius: 0.2rem;
+  background: rgb(from var(--color-white) r g b / 2%);
+}
+
+.account-game-account-row strong,
+.account-game-account-row small {
+  display: block;
+}
+
+.account-game-account-row strong {
+  color: color-mix(in srgb, var(--color-accent) 72%, white);
+}
+
+.account-game-account-row small {
+  color: var(--color-text-secondary);
+}
+
+.account-empty-state {
+  display: grid;
+  gap: 0.25rem;
+  padding: 1rem;
+  border: 1px solid rgb(from var(--color-white) r g b / 8%);
+  color: var(--color-text-secondary);
+}
+
+.account-empty-state strong {
+  color: color-mix(in srgb, var(--color-accent) 72%, white);
+}
+
+.account-reward-list > div,
+.account-timeline > div,
+.account-security p {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 0.75rem;
+  align-items: center;
+  margin: 0;
+  padding: 0.65rem 0;
+  border-bottom: 1px solid rgb(from var(--color-white) r g b / 7%);
+}
+
+.account-reward-list > div {
+  grid-template-columns: auto minmax(0, 1fr) auto;
+}
+
+.account-reward-list span,
+.account-security span {
+  color: var(--color-accent);
+}
+
+.account-reward-list strong,
+.account-timeline strong {
+  color: var(--color-text);
+}
+
+.account-reward-list small,
+.account-timeline small {
+  display: block;
+  color: var(--color-text-secondary);
+}
+
+.account-panel__actions {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+
+.account-timeline > div {
+  grid-template-columns: auto minmax(0, 1fr) auto;
+}
+
+.account-timeline > div > span {
+  width: 0.75rem;
+  height: 0.75rem;
+  border: 1px solid var(--color-accent);
+  border-radius: 50%;
+  background: var(--bg-primary);
+  box-shadow: 0 0 0 0.2rem rgb(from var(--color-accent) r g b / 12%);
+}
+
+.account-news {
+  padding-top: 1rem;
+}
+
+.account-news img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border: 1px solid rgb(from var(--color-accent) r g b / 25%);
+  border-radius: 0.2rem;
+}
+
+.account-news h3 {
+  margin: 0 0 0.45rem;
+  color: color-mix(in srgb, var(--color-accent) 72%, white);
+  font-size: 1.15rem;
+}
+
+.account-news time {
+  display: block;
+  margin-bottom: 0.35rem;
+  color: var(--color-text-secondary);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.account-news p,
+.account-news pre {
+  margin: 0 0 0.65rem;
+  color: var(--color-text-secondary);
+}
+
+.account-news pre {
+  overflow: auto;
+  max-height: 8rem;
+  padding: 0;
+  background: transparent;
+  border: 0;
+  font: inherit;
+  white-space: pre-wrap;
+}
+
+.account-security {
+  padding-top: 1rem;
+}
+
+.account-security p {
+  grid-template-columns: auto minmax(0, 1fr);
+  color: var(--color-text-secondary);
+}
+
+.account-dashboard-actions {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.85rem;
+  padding-top: 1rem;
+}
+
+.account-dashboard-actions > div {
+  display: grid;
+  gap: 0.65rem;
+  min-width: 0;
+  padding: 1rem;
+  border: 1px solid rgb(from var(--color-white) r g b / 8%);
+  border-radius: 0.2rem;
+  background: rgb(from var(--color-white) r g b / 3%);
+}
+
+.account-dashboard-actions strong {
+  color: color-mix(in srgb, var(--color-accent) 72%, white);
+}
+
+.account-dashboard-actions span {
+  color: var(--color-text-secondary);
+  line-height: 1.5;
+}
+
+.account-table {
+  display: grid;
+  gap: 0.65rem;
+  padding-top: 1rem;
+}
+
+.account-table__row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto auto;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 0.75rem;
+  border: 1px solid rgb(from var(--color-white) r g b / 8%);
+  border-radius: 0.2rem;
+  background: rgb(from var(--color-white) r g b / 2%);
+}
+
+.account-table__row strong,
+.account-table__row small {
+  display: block;
+}
+
+.account-table__row strong {
+  color: color-mix(in srgb, var(--color-accent) 72%, white);
+}
+
+.account-table__row small,
+.account-table__row > span {
+  color: var(--color-text-secondary);
+}
+
+.account-progress-detail {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-top: -0.25rem;
+  padding: 0 0.75rem 0.55rem;
+}
+
+.account-progress-detail span {
+  min-width: 0;
+  padding: 0.28rem 0.45rem;
+  border: 1px solid rgb(from var(--color-white) r g b / 8%);
+  border-radius: 0.2rem;
+  background: rgb(from var(--color-white) r g b / 3%);
+  color: var(--color-text-secondary);
+  font-size: 0.76rem;
+}
+
+.account-package-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.85rem;
+  padding-top: 1rem;
+}
+
+.account-package {
+  display: grid;
+  gap: 0.65rem;
+  min-width: 0;
+  padding: 1rem;
+  border: 1px solid rgb(from var(--color-white) r g b / 8%);
+  border-radius: 0.2rem;
+  background: rgb(from var(--color-white) r g b / 3%);
+}
+
+.account-package span {
+  color: var(--color-text-secondary);
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.account-package h3 {
+  margin: 0;
+  color: color-mix(in srgb, var(--color-accent) 72%, white);
+  font-size: 1.15rem;
+}
+
+.account-package strong {
+  color: var(--color-accent);
+  font-family: var(--font-heading);
+  font-size: 1.65rem;
+  font-weight: 400;
+}
+
+.account-package p {
+  margin: 0;
+  color: var(--color-text-secondary);
+}
+
+.account-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.85rem;
+  padding-top: 1rem;
+}
+
+.account-form-grid--game-account {
+  grid-template-columns: repeat(3, minmax(0, 1fr)) auto;
+}
+
+.account-form-grid label {
+  display: grid;
+  gap: 0.35rem;
+}
+
+.account-form-grid span {
+  color: var(--color-text-secondary);
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.account-form-grid input {
+  width: 100%;
+  min-height: 3rem;
+  padding: 0.7rem 0.85rem;
+  border: 1px solid rgb(from var(--color-accent) r g b / 28%);
+  border-radius: 0.2rem;
+  background: rgb(from var(--color-white) r g b / 4%);
+  color: var(--color-text);
+}
+
+.account-form-actions {
+  display: flex;
+  align-items: end;
+}
+
+.account-error {
+  color: color-mix(in srgb, var(--danger) 58%, white);
+  font-size: 0.78rem;
+}
+
+.account-settings-list {
+  display: grid;
+  gap: 0.75rem;
+  padding-top: 1rem;
+}
+
+.account-settings-list label {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 0.75rem;
+  border: 1px solid rgb(from var(--color-white) r g b / 8%);
+  border-radius: 0.2rem;
+  color: var(--color-text-secondary);
+}
+
+.account-settings-list input {
+  accent-color: var(--color-accent);
+}
+
+.account-avatar-form {
+  display: grid;
+  gap: 1rem;
+  padding-top: 1rem;
+}
+
+.account-avatar-current {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 0.85rem;
+  border: 1px solid rgb(from var(--color-accent) r g b / 24%);
+  border-radius: 0.2rem;
+  background: rgb(from var(--color-white) r g b / 3%);
+}
+
+.account-avatar-current img {
+  width: 4rem;
+  height: 4rem;
+  flex: 0 0 4rem;
+  border: 1px solid rgb(from var(--color-accent) r g b / 32%);
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.account-avatar-current strong,
+.account-avatar-current span {
+  display: block;
+}
+
+.account-avatar-current strong {
+  color: color-mix(in srgb, var(--color-accent) 72%, white);
+}
+
+.account-avatar-current span {
+  color: var(--color-text-secondary);
+  font-size: 0.82rem;
+  word-break: break-word;
+}
+
+.account-avatar-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(5rem, 1fr));
+  gap: 0.75rem;
+  max-height: 28rem;
+  overflow: auto;
+  padding: 0.25rem;
+}
+
+.account-avatar-option {
+  position: relative;
+  display: block;
+  cursor: pointer;
+}
+
+.account-avatar-option input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.account-avatar-option span {
+  display: block;
+  overflow: hidden;
+  border: 2px solid rgb(from var(--color-white) r g b / 10%);
+  border-radius: 0.2rem;
+  background: rgb(from var(--color-white) r g b / 4%);
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
+}
+
+.account-avatar-option img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
+.account-avatar-option input:checked + span {
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 0.2rem rgb(from var(--color-accent) r g b / 16%);
+}
+
+.account-avatar-option:hover span,
+.account-avatar-option input:focus-visible + span {
+  border-color: color-mix(in srgb, var(--color-accent) 72%, white);
+  transform: translateY(-1px);
+}
+
+@media (max-width: 64rem) {
+  .account-sidebar-column {
+    align-self: auto;
+  }
+
+  .account-sidebar {
+    position: static;
+  }
+
+  .account-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .account-dashboard__grid,
+  .account-page-grid,
+  .account-status,
+  .account-news {
+    grid-template-columns: 1fr;
+  }
+
+  .account-package-grid,
+  .account-form-grid,
+  .account-form-grid--game-account,
+  .account-dashboard-actions {
+    grid-template-columns: 1fr;
+  }
+
+  .account-panel--wide {
+    grid-column: auto;
+  }
+
+  .account-status__crest {
+    display: none;
+  }
+}
+
+@media (max-width: 42rem) {
+  .account-dashboard__hero {
+    min-height: 12rem;
+    padding: 1rem;
+  }
+
+  .account-panel {
+    padding: 1rem;
+  }
+
+  .account-panel__header,
+  .account-panel__header--split,
+  .account-status__list div,
+  .account-character-row,
+  .account-game-account-row,
+  .account-timeline > div,
+  .account-table__row,
+  .account-reward-list > div {
+    grid-template-columns: 1fr;
+  }
+
+  .account-panel__header a {
+    justify-self: start;
+  }
+
+  .account-metrics,
+  .account-metrics--rewards,
+  .account-panel__actions {
+    grid-template-columns: 1fr;
+  }
+
+  .account-metrics > div {
+    padding: 0.75rem 0;
+    border-top: 1px solid rgb(from var(--color-white) r g b / 8%);
+    border-left: 0;
+  }
+
+  .account-metrics > div:first-child {
+    border-top: 0;
+  }
+
+  .account-sync {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .account-note--split {
+    align-items: stretch;
+    flex-direction: column;
+  }
+}

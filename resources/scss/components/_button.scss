@@ -1,0 +1,230 @@
+@use '../abstracts' as *;
+
+/* ==========================================================================
+   Buttons
+   ========================================================================== */
+
+.btn,
+.btn-fantasy {
+  --btn-height: 2.8rem;
+  --btn-padding-x: 1.45rem;
+  --btn-bg: url('/l2vaedor/public/assets/images/ui/button-bg.png') center / 100% 100% no-repeat;
+  --btn-border: color-mix(in srgb, var(--color-accent) 78%, white);
+  --btn-color: var(--color-white);
+  --btn-hover-bg: url('/l2vaedor/public/assets/images/ui/button-bg.png') center / 100% 100%
+    no-repeat;
+  --btn-hover-border: color-mix(in srgb, var(--color-accent) 88%, white);
+  --btn-shadow: 0 0.65rem 1.25rem rgb(from var(--color-black) r g b / 24%);
+
+  position: relative;
+  isolation: isolate;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+
+  min-height: var(--btn-height);
+  min-width: 5rem;
+  padding: 0.65rem var(--btn-padding-x);
+
+  border: 1px solid var(--btn-border);
+  border-radius: 0.5rem;
+
+  color: var(--btn-color);
+  background: var(--btn-bg);
+  box-shadow: var(--btn-shadow);
+
+  font-family: var(--font-heading);
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  line-height: 1.1;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  white-space: nowrap;
+
+  cursor: pointer;
+  user-select: none;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease,
+    filter 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.btn:hover,
+.btn-fantasy:hover {
+  border-color: var(--btn-hover-border);
+  color: var(--btn-color);
+  background: var(--btn-hover-bg);
+  transform: translateY(-1px);
+}
+
+.btn:active,
+.btn-fantasy:active {
+  filter: brightness(0.96);
+  transform: translateY(0);
+}
+
+.btn:focus-visible,
+.btn-fantasy:focus-visible {
+  outline: 2px solid color-mix(in srgb, var(--color-accent) 78%, white);
+  outline-offset: 4px;
+}
+
+.btn:disabled,
+.btn.is-disabled,
+.btn-fantasy:disabled,
+.btn-fantasy.is-disabled {
+  opacity: 0.48;
+  cursor: default;
+  pointer-events: none;
+}
+
+.btn > *,
+.btn-fantasy > * {
+  position: relative;
+  z-index: 2;
+}
+
+.btn--primary {
+  --btn-color: var(--color-white);
+}
+
+.btn--secondary,
+.btn--ghost {
+  --btn-bg: linear-gradient(
+    135deg,
+    color-mix(in srgb, var(--color-accent) 78%, white) 0%,
+    var(--color-accent) 36%,
+    color-mix(in srgb, var(--color-accent) 70%, black) 68%,
+    color-mix(in srgb, var(--color-accent) 88%, white) 100%
+  );
+  --btn-border: color-mix(in srgb, var(--color-accent) 72%, white);
+  --btn-color: color-mix(in srgb, var(--bg-primary) 88%, black);
+  --btn-hover-bg: linear-gradient(
+    135deg,
+    color-mix(in srgb, var(--color-accent) 90%, white) 0%,
+    color-mix(in srgb, var(--color-accent) 86%, white) 42%,
+    color-mix(in srgb, var(--color-accent) 76%, black) 100%
+  );
+  --btn-hover-border: var(--color-white);
+}
+
+.btn--fantasy,
+.btn-fantasy {
+  --btn-height: 2.75rem;
+  --btn-padding-x: 2.15rem;
+  --btn-side-width: 2rem;
+  --btn-side-offset: -1.5rem;
+  --btn-bg: url('/l2vaedor/public/assets/images/ui/button-bg.png') center / 100% 100% no-repeat;
+  --btn-border: transparent;
+  --btn-color: color-mix(in srgb, var(--color-accent) 82%, white);
+  --btn-hover-bg: url('/l2vaedor/public/assets/images/ui/button-bg.png') center / 100% 100%
+    no-repeat;
+  --btn-hover-border: transparent;
+  --btn-shadow: 0 0.85rem 1.4rem rgb(from var(--color-black) r g b / 32%);
+
+  padding-inline: calc(var(--btn-padding-x) + 0.35rem);
+  border: 0;
+  border-radius: 0;
+  overflow: visible;
+  background: var(--btn-bg);
+  border-radius: 1rem;
+  border-top: 2px solid #787979;
+  border-bottom: 2px solid #787979;
+  margin-right: calc(var(--btn-side-width) / 2);
+  margin-left: calc(var(--btn-side-width) / 2);
+}
+
+.btn--fantasy::before,
+.btn--fantasy::after,
+.btn-fantasy::before,
+.btn-fantasy::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  z-index: 1;
+  width: var(--btn-side-width);
+  height: calc(var(--btn-height) + 4px);
+  pointer-events: none;
+  background: center / contain no-repeat;
+  filter: drop-shadow(0 0.35rem 0.45rem rgb(from var(--color-black) r g b / 34%));
+  transform: translateY(-50%);
+}
+
+.btn--fantasy::before,
+.btn-fantasy::before {
+  left: calc(var(--btn-side-width) / -2);
+  background-image: url('/l2vaedor/public/assets/images/ui/button-before.png');
+}
+
+.btn--fantasy::after,
+.btn-fantasy::after {
+  right: calc(var(--btn-side-width) / -2);
+  background-image: url('/l2vaedor/public/assets/images/ui/button-after.png');
+}
+
+.btn--fantasy:hover,
+.btn-fantasy:hover {
+  color: var(--color-white);
+  border-color: #787979;
+}
+
+.btn--sm {
+  --btn-height: 2.65rem;
+  --btn-padding-x: 1rem;
+
+  font-size: 0.75rem;
+}
+
+.btn--lg {
+  --btn-height: 3.8rem;
+  --btn-padding-x: 1.85rem;
+
+  font-size: 0.95rem;
+}
+
+.btn--full {
+  width: 100%;
+}
+
+.nav__item--button .btn {
+  --btn-height: 3rem;
+  --btn-padding-x: 1rem;
+
+  font-size: 0.76rem;
+}
+
+.btn__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 1.05rem;
+  height: 1.05rem;
+
+  color: currentColor;
+  font-size: 0.72rem;
+  line-height: 1;
+
+  transition: transform 0.2s ease;
+}
+
+.btn:hover .btn__icon,
+.btn-fantasy:hover .btn__icon {
+  transform: rotate(45deg) scale(1.08);
+}
+
+@media (max-width: 768px) {
+  .btn,
+  .btn-fantasy {
+    min-width: 0;
+    white-space: normal;
+  }
+}

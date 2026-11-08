@@ -1,0 +1,69 @@
+.section--cta {
+  margin-bottom: -25px;
+  padding: clamp(2rem, 3vw, 3rem) 0;
+  background:
+    linear-gradient(180deg, rgb(from var(--bg-primary) r g b / 36%), var(--bg-primary) 96%),
+    url('/l2vaedor/public/assets/images/temp/bg-cta-footer-vaedor.png') center 42% / cover no-repeat;
+}
+
+.section-cta-banner {
+  --cut-corner-border: rgb(from var(--color-accent) r g b / 24%);
+  --cut-corner-bg:
+    linear-gradient(135deg, rgb(from var(--color-primary) r g b / 22%), transparent 46%),
+    linear-gradient(
+      180deg,
+      rgb(from var(--bg-surface) r g b / 88%),
+      rgb(from var(--bg-primary) r g b / 78%)
+    );
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: clamp(2rem, 4vw, 4rem);
+  padding: clamp(2rem, 4vw, 3.25rem);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+
+  .section__title {
+    margin: 0 0 0.75rem;
+    color: var(--color-white);
+    font-family: var(--font-heading);
+    font-size: clamp(1.8rem, 3vw, 2.6rem);
+    text-transform: uppercase;
+
+    &::after {
+      margin-inline: 0;
+    }
+  }
+
+  p {
+    max-width: 42rem;
+    margin: 0;
+    color: var(--text-secondary);
+    line-height: 1.8;
+  }
+}
+
+.section-cta-banner__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 1.4rem;
+  justify-content: flex-end;
+}
+
+@media (max-width: 48rem) {
+  .section-cta-banner {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .section-cta-banner__actions {
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 40rem) {
+  .section-cta-banner__actions .btn {
+    width: 100%;
+  }
+}

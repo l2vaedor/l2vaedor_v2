@@ -1,0 +1,108 @@
+:root {
+  color-scheme: dark;
+
+  /* Brand */
+  --color-primary: #6ca8ff;
+  --color-gold: #b98f4e;
+  --color-accent: #b8c1cc;
+  --color-purple: #906dbd;
+
+  /* Surfaces */
+  --bg-primary: #080d12;
+  --bg-secondary: #12161e;
+  --bg-surface: #1a2028;
+  --bg-surface-light: #2a3342;
+
+  /* Text */
+  --text-primary: #ece4d0;
+  --text-secondary: #c5c9d1;
+  --text-muted: #708799;
+  --color-text: var(--text-primary);
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-muted: var(--text-muted);
+
+  /* Neutrals */
+  --color-white: #ffffff;
+  --color-black: #000000;
+
+  /* States and game colors */
+  --success: #30b66a;
+  --warning: #d8a23d;
+  --danger: #9f2f3a;
+  --rarity-common: #6f7685;
+  --rarity-epic: #9d4dff;
+  --rarity-legendary: #f5b942;
+  --vital-hp: #e9a5dd;
+  --vital-cp: #e7c16c;
+  --vital-mp: #78aaff;
+
+  /* Effects */
+  --border-primary: rgb(from var(--color-accent) r g b / 40%);
+  --color-border: var(--color-primary);
+  --border-secondary: rgb(from var(--color-white) r g b / 8%);
+  --shadow-sm: 0 4px 12px rgb(from var(--color-black) r g b / 30%);
+  --shadow-md: 0 12px 32px rgb(from var(--color-black) r g b / 45%);
+  --shadow-lg: 0 24px 64px rgb(from var(--color-black) r g b / 60%);
+  --glow-blue: 0 0 18px rgb(from var(--color-primary) r g b / 55%);
+  --glow-gold: 0 0 18px rgb(from var(--color-accent) r g b / 45%);
+  --glow-green: 0 0 18px rgb(from var(--success) r g b / 35%);
+  --glow-red: 0 0 18px rgb(from var(--danger) r g b / 40%);
+
+  /* Gradients */
+  --gradient-primary: linear-gradient(
+    180deg,
+    color-mix(in srgb, var(--color-primary) 70%, white) 0%,
+    color-mix(in srgb, var(--color-primary) 70%, black) 100%
+  );
+  --gradient-gold: linear-gradient(
+    180deg,
+    color-mix(in srgb, var(--color-accent) 72%, white) 0%,
+    color-mix(in srgb, var(--color-accent) 68%, black) 100%
+  );
+  --gradient-gold-transparent: linear-gradient(
+    90deg,
+    rgb(from var(--color-accent) r g b / 0%) 0%,
+    color-mix(in srgb, var(--color-accent) 68%, black) 50%,
+    rgb(from var(--color-accent) r g b / 0%) 100%
+  );
+  --gradient-danger: linear-gradient(
+    180deg,
+    var(--danger) 0%,
+    rgb(from var(--danger) r g b / 70%) 100%
+  );
+  --gradient-dark: linear-gradient(
+    180deg,
+    rgb(from var(--bg-primary) r g b / 100%) 20%,
+    rgb(from var(--bg-primary) r g b / 20%) 90%,
+    rgb(from var(--bg-primary) r g b / 0%) 100%
+  );
+}
+
+.theme-light {
+  color-scheme: light;
+
+  --bg-primary: #f3f0e8;
+  --bg-secondary: #ebe5d8;
+  --bg-surface: #ffffff;
+  --bg-surface-light: #f7f3ea;
+
+  --text-primary: #1f2933;
+  --text-secondary: #445264;
+  --text-muted: #687486;
+  --color-text: var(--text-primary);
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-muted: var(--text-muted);
+
+  --border-secondary: rgb(from var(--color-black) r g b / 10%);
+  --shadow-sm: 0 4px 12px rgb(from var(--color-black) r g b / 10%);
+  --shadow-md: 0 12px 32px rgb(from var(--color-black) r g b / 14%);
+  --shadow-lg: 0 24px 64px rgb(from var(--color-black) r g b / 18%);
+  --gradient-dark: linear-gradient(
+    180deg,
+    rgb(from var(--bg-primary) r g b / 96%) 20%,
+    rgb(from var(--bg-primary) r g b / 72%) 90%,
+    rgb(from var(--bg-primary) r g b / 0%) 100%
+  );
+}

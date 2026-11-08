@@ -1,0 +1,123 @@
+/* ----------------------------------------
+   Features
+---------------------------------------- */
+
+.features {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+/* ----------------------------------------
+   Feature
+---------------------------------------- */
+
+.feature {
+  width: 20%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 0;
+  padding: clamp(1.25rem, 2vw, 2rem) clamp(0.75rem, 1.5vw, 1.25rem);
+  text-align: center;
+
+  &:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    top: 4rem;
+    right: 0;
+    width: 1px;
+    height: 8rem;
+    background: linear-gradient(transparent, rgb(from var(--color-white) r g b / 8%), transparent);
+  }
+
+  .feature__image {
+    width: clamp(5.5rem, 7vw, 7.75rem);
+    height: clamp(5.5rem, 7vw, 7.75rem);
+    margin-bottom: clamp(1.6rem, 2.5vw, 2.35rem);
+    object-fit: contain;
+    filter: drop-shadow(0 0.8rem 1.25rem rgb(from var(--color-black) r g b / 42%));
+    transition:
+      transform 0.3s ease,
+      filter 0.3s ease;
+  }
+
+  .feature__title {
+    margin-bottom: 1.1rem;
+    color: var(--color-white);
+    font-family: var(--font-heading);
+    font-size: 1.25rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+  }
+
+  .feature__content {
+    max-width: 16rem;
+    color: var(--color-text-primary);
+    font-size: 0.9375rem;
+    line-height: 1.8;
+    margin-bottom: 1rem;
+
+    p:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &:hover {
+    .feature__image {
+      transform: translateY(-4px) scale(1.08);
+      filter: brightness(1.1) drop-shadow(0 0 1rem rgb(from var(--color-accent) r g b / 25%));
+    }
+
+    .feature__title {
+      color: var(--color-accent);
+    }
+
+    .feature__content {
+      color: var(--color-text);
+    }
+  }
+
+  .btn {
+    margin-top: auto;
+  }
+}
+
+/* ----------------------------------------
+   Responsive
+---------------------------------------- */
+
+@media (max-width: 1400px) {
+  .features .feature {
+    width: 33%;
+  }
+
+  .feature:nth-child(3)::after {
+    display: none;
+  }
+}
+
+@media (max-width: 992px) {
+  .features .feature {
+    width: 50%;
+  }
+
+  .feature {
+    &::after {
+      display: none;
+    }
+  }
+}
+
+@media (max-width: 640px) {
+  .features .feature {
+    width: 100%;
+  }
+}

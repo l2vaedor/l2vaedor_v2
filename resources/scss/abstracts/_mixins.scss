@@ -1,0 +1,23 @@
+@mixin tablet {
+    @media (min-width: $tablet) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (min-width: $desktop) {
+        @content;
+    }
+}
+
+@mixin gradient-linear($direction, $stops...) {
+    background: linear-gradient($direction, $stops...);
+}
+
+@mixin gradient-radial($shape-position, $stops...) {
+    background: radial-gradient($shape-position, $stops...);
+}
+
+@mixin surface-gradient($direction: 180deg, $from: var(--bg-surface), $to: var(--bg-primary)) {
+    background: linear-gradient($direction, $from, $to);
+}

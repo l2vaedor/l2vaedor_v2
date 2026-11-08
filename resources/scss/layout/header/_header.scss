@@ -1,0 +1,38 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: var(--gradient-dark);
+}
+
+.logo {
+  max-width: 12rem;
+  display: inline-block;
+}
+
+@media (max-width: 992px) {
+  .header {
+    position: sticky;
+  }
+
+  .header .row {
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .header .col:first-child {
+    flex: 0 0 auto;
+  }
+
+  .header .col:last-child {
+    flex: 0 0 auto;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .header .logo {
+    max-width: 9rem;
+  }
+}

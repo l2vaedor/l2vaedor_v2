@@ -1,0 +1,70 @@
+.has-motion
+  :is(
+    .hero--primary,
+    .hero--small,
+    .legacy-hero,
+    [data-scroll-reveal],
+    .legacy-section,
+    .card,
+    .feature,
+    .patch-notes,
+    .account-panel,
+    .account-dashboard__hero,
+    .account-character-row,
+    .account-note,
+    .account-package,
+    .account-table__row,
+    .account-reward-list > div,
+    .account-timeline > div
+  ) {
+  opacity: 0;
+  transform: translate3d(0, 1rem, 0);
+  filter: blur(0.15rem);
+  transition:
+    opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+    filter 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform, filter;
+}
+
+.has-motion
+  :is(
+    .hero--primary,
+    .hero--small,
+    .legacy-hero,
+    [data-scroll-reveal],
+    .legacy-section,
+    .card,
+    .feature,
+    .patch-notes,
+    .account-panel,
+    .account-dashboard__hero,
+    .account-character-row,
+    .account-note,
+    .account-package,
+    .account-table__row,
+    .account-reward-list > div,
+    .account-timeline > div
+  ).is-visible,
+.has-motion .motion-reveal.is-visible {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+  filter: blur(0);
+}
+
+.has-motion .motion-parallax {
+  transform: translate3d(0, var(--motion-parallax-y, 0px), 0);
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .motion-reveal,
+  .motion-parallax {
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+    transition: none !important;
+    animation: none !important;
+    will-change: auto !important;
+  }
+}

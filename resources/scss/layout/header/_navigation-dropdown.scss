@@ -1,0 +1,303 @@
+/* ----------------------------------------
+   Navigation Dropdown
+---------------------------------------- */
+
+.dropdown {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+
+  min-width: 16rem;
+  padding: 0.75rem;
+
+  opacity: 0;
+  visibility: hidden;
+
+  transform: translate(-50%, 1rem);
+
+  pointer-events: none;
+
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease,
+    visibility 0.25s ease;
+
+  z-index: 100;
+}
+
+/* ----------------------------------------
+   Visibility
+---------------------------------------- */
+
+.nav__item:hover > .dropdown,
+.nav__item:focus-within > .dropdown {
+  opacity: 1;
+  visibility: visible;
+
+  transform: translate(-50%, 0);
+
+  pointer-events: auto;
+}
+
+/* ----------------------------------------
+   Position Modifiers
+---------------------------------------- */
+
+.dropdown--left {
+  left: 0;
+
+  transform: translateY(1rem);
+}
+
+.dropdown--left.nav__item:hover,
+.dropdown--left.nav__item:focus-within {
+  transform: translateY(0);
+}
+
+.dropdown--right {
+  left: auto;
+  right: 0;
+
+  transform: translateY(1rem);
+}
+
+.nav__item:hover > .dropdown--right,
+.nav__item:focus-within > .dropdown--right {
+  transform: translateY(0);
+}
+
+/* ----------------------------------------
+   Dropdown Panel
+---------------------------------------- */
+
+.dropdown--small {
+  border: 1px solid rgb(from var(--color-accent) r g b / 20%);
+  border-radius: 0.5rem;
+
+  background: var(--gradient-dark);
+
+  backdrop-filter: blur(12px);
+
+  box-shadow: 0 1.25rem 2.5rem rgb(from var(--color-black) r g b / 45%);
+}
+
+/* ----------------------------------------
+   Decorative Border
+---------------------------------------- */
+
+.dropdown--small::before {
+  content: '';
+
+  position: absolute;
+  inset: 0.25rem;
+
+  border: 1px solid rgb(from var(--color-white) r g b / 6%);
+
+  border-radius: inherit;
+
+  pointer-events: none;
+}
+
+/* ----------------------------------------
+   Arrow
+---------------------------------------- */
+
+.dropdown--small::after {
+  content: '';
+
+  position: absolute;
+  top: -0.45rem;
+  left: 50%;
+
+  width: 0.75rem;
+  height: 0.75rem;
+
+  border-top: 1px solid rgb(from var(--color-accent) r g b / 20%);
+  border-left: 1px solid rgb(from var(--color-accent) r g b / 20%);
+
+  background: var(--bg-primary);
+
+  transform: translateX(-50%) rotate(45deg);
+}
+
+/* ----------------------------------------
+   Right Arrow
+---------------------------------------- */
+
+.dropdown--right::after {
+  left: auto;
+  right: 1.5rem;
+
+  transform: rotate(45deg);
+}
+
+/* ----------------------------------------
+   List
+---------------------------------------- */
+
+.dropdown__list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+/* ----------------------------------------
+   List Item
+---------------------------------------- */
+
+.dropdown__list > li {
+  margin: 0;
+  padding: 0;
+}
+
+/* ----------------------------------------
+   Link
+---------------------------------------- */
+
+.dropdown__list a {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+
+  padding: 0.875rem 1rem;
+
+  border-radius: 0.35rem;
+
+  color: var(--color-text-primary);
+
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.4;
+  text-decoration: none;
+
+  transition:
+    color 0.25s ease,
+    background 0.25s ease,
+    padding-left 0.25s ease;
+}
+
+/* ----------------------------------------
+   Decorative Diamond
+---------------------------------------- */
+
+.dropdown__list a::before {
+  content: '';
+
+  width: 0.35rem;
+  height: 0.35rem;
+
+  flex-shrink: 0;
+
+  border: 1px solid var(--color-accent);
+
+  opacity: 0.45;
+
+  transform: rotate(45deg);
+
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease;
+}
+
+/* ----------------------------------------
+   Hover
+---------------------------------------- */
+
+.dropdown__list a:hover,
+.dropdown__list a:focus-visible {
+  padding-left: 1.25rem;
+
+  color: var(--color-accent);
+
+  background: rgb(from var(--color-white) r g b / 3.5%);
+}
+
+.dropdown__list a:hover::before,
+.dropdown__list a:focus-visible::before {
+  opacity: 1;
+
+  transform: rotate(45deg) scale(1.15);
+}
+
+/* ----------------------------------------
+   Active
+---------------------------------------- */
+
+.dropdown__list .is-active,
+.dropdown__list .active {
+  color: var(--color-accent);
+
+  background: rgb(from var(--color-white) r g b / 4%);
+}
+
+/* ----------------------------------------
+   Divider
+---------------------------------------- */
+
+.dropdown__divider {
+  height: 1px;
+  margin: 0.5rem 0;
+
+  background: rgb(from var(--color-white) r g b / 8%);
+}
+
+/* ----------------------------------------
+   Label
+---------------------------------------- */
+
+.dropdown__label {
+  display: block;
+
+  margin-bottom: 0.5rem;
+  padding: 0 1rem;
+
+  color: rgb(from var(--color-white) r g b / 45%);
+
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+/* ----------------------------------------
+   Responsive
+---------------------------------------- */
+
+@media (max-width: 992px) {
+  .dropdown {
+    position: static;
+    box-sizing: border-box;
+    width: 100%;
+    min-width: 100%;
+    max-width: 100%;
+    padding: 0 0 0.75rem 1rem;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    pointer-events: auto;
+    box-shadow: none;
+  }
+
+  .dropdown--small {
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    backdrop-filter: none;
+  }
+
+  .dropdown--small::before,
+  .dropdown--small::after {
+    display: none;
+  }
+
+  .dropdown__list a {
+    padding: 0.75rem 0;
+  }
+}

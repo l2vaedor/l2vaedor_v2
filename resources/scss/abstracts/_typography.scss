@@ -1,0 +1,33 @@
+:root {
+  --font-heading: 'Cinzel', serif;
+  --font-body: 'Nunito', sans-serif;
+
+  --font-size-xs: 0.8rem;
+  --font-size-sm: 1rem;
+  --font-size-md: 1.4rem;
+  --font-size-lg: 1.8rem;
+  --font-size-xl: 2.2rem;
+
+  --heading-size-hero: clamp(3rem, 6vw, 5.25rem);
+  --heading-size-h1: clamp(2.4rem, 4.5vw, 4rem);
+  --heading-size-h2: clamp(1.9rem, 3vw, 2.75rem);
+  --heading-size-h3: clamp(1.35rem, 2vw, 1.9rem);
+  --heading-letter-spacing: 0.02em;
+
+  --font-weight-regular: 400;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  --line-height-body: 1.6;
+  --line-height-heading: 1.2;
+}
+
+@media (max-width: 48rem) {
+  :root {
+    --heading-size-hero: clamp(2.15rem, 10vw, 3.1rem);
+    --heading-size-h1: clamp(2rem, 8vw, 2.65rem);
+    --heading-size-h2: clamp(1.55rem, 6vw, 2rem);
+    --heading-size-h3: clamp(1.2rem, 4.5vw, 1.45rem);
+    --heading-letter-spacing: 0.01em;
+  }
+}
