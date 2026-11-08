@@ -1,0 +1,63 @@
+@use '../abstracts' as *;
+
+.hero {
+    position: relative;
+    isolation: isolate;
+    display: flex;
+    align-items: center;
+    min-height: min(46rem, 100vh);
+    padding-block: clamp(8rem, 12vw, 12rem) clamp(6rem, 9vw, 9rem);
+    background:
+        linear-gradient(
+            90deg,
+            rgb(from var(--bg-primary) r g b / 94%) 0%,
+            rgb(from var(--bg-primary) r g b / 74%) 42%,
+            rgb(from var(--bg-primary) r g b / 20%) 100%
+        ),
+        radial-gradient(ellipse at 70% 30%, rgb(from var(--color-primary) r g b / 14%), transparent 40rem),
+        var(--bg-primary);
+
+    &__inner {
+        max-width: 120rem;
+        margin-inline: auto;
+        padding-inline: 2rem;
+
+        @include tablet {
+            padding-inline: 4rem;
+        }
+    }
+
+    &__subtitle {
+        margin: 0 0 1.2rem;
+        font-size: var(--font-size-md);
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--color-accent);
+    }
+
+    &__title {
+        margin: 0 0 clamp(1.25rem, 2vw, 1.75rem);
+        font-family: var(--font-heading);
+        font-size: var(--heading-size-hero);
+        font-weight: 400;
+        line-height: 1.02;
+        letter-spacing: var(--heading-letter-spacing);
+        text-transform: uppercase;
+        color: var(--color-white);
+        text-shadow: 0 1rem 3rem rgb(from var(--color-black) r g b / 72%);
+    }
+
+    &__text {
+        max-width: 44rem;
+        margin: 0 0 3.2rem;
+        font-size: clamp(1.05rem, 1.6vw, 1.25rem);
+        line-height: 1.8;
+        color: var(--text-secondary);
+    }
+
+    &__actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem 1.6rem;
+    }
+}

@@ -23,11 +23,5 @@ Homestead.json
 Homestead.yaml
 Thumbs.db
 
-# Images are not tracked for now
-*.png
-*.jpg
-*.jpeg
-*.gif
-*.webp
-*.svg
-*.ico
+# Local icon sources, not tracked
+**/l2_icons/

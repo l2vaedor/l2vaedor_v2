@@ -1,0 +1,53 @@
+@use '../abstracts' as *;
+
+.steps {
+    display: grid;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    @include tablet {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    &__item {
+        display: flex;
+        flex-direction: column;
+        gap: 0.8rem;
+        padding: 2.4rem;
+        border: 1px solid var(--border-primary);
+        background-color: var(--bg-surface);
+    }
+
+    &__number {
+        font-family: var(--font-heading);
+        font-size: var(--font-size-md);
+        color: var(--color-gold);
+    }
+
+    &__title {
+        margin: 0;
+        font-family: var(--font-heading);
+        font-size: var(--heading-size-h3);
+        line-height: var(--line-height-heading);
+        color: var(--text-primary);
+    }
+
+    &__text {
+        margin: 0;
+        color: var(--text-secondary);
+    }
+
+    &__link {
+        margin-top: auto;
+        color: var(--color-gold);
+        font-weight: var(--font-weight-semibold);
+        text-decoration: none;
+
+        &:hover,
+        &:focus-visible {
+            text-decoration: underline;
+        }
+    }
+}

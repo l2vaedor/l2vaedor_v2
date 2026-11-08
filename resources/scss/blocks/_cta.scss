@@ -1,0 +1,60 @@
+@use '../abstracts' as *;
+
+.cta {
+    padding-block: clamp(2rem, 3vw, 3rem);
+    background:
+        linear-gradient(180deg, rgb(from var(--bg-primary) r g b / 36%), var(--bg-primary) 96%);
+
+    &__inner {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: clamp(2rem, 4vw, 4rem);
+        max-width: 120rem;
+        margin-inline: auto;
+        padding: clamp(2rem, 4vw, 3.25rem);
+        border: 1px solid rgb(from var(--color-accent) r g b / 24%);
+        background:
+            linear-gradient(135deg, rgb(from var(--color-primary) r g b / 22%), transparent 46%),
+            linear-gradient(
+                180deg,
+                rgb(from var(--bg-surface) r g b / 88%),
+                rgb(from var(--bg-primary) r g b / 78%)
+            );
+        box-shadow: var(--shadow-lg);
+        overflow: hidden;
+
+        @include tablet {
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+        }
+    }
+
+    &__title {
+        margin: 0 0 0.75rem;
+        font-family: var(--font-heading);
+        font-size: clamp(1.8rem, 3vw, 2.6rem);
+        line-height: var(--line-height-heading);
+        text-transform: uppercase;
+        color: var(--color-white);
+    }
+
+    &__text {
+        max-width: 42rem;
+        margin: 0;
+        line-height: 1.8;
+        color: var(--text-secondary);
+    }
+
+    &__actions {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        gap: 1rem 1.4rem;
+
+        @include tablet {
+            justify-content: flex-end;
+        }
+    }
+}

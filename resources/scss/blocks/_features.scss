@@ -1,0 +1,60 @@
+@use '../abstracts' as *;
+
+.features {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 3.2rem 0 0;
+    padding: 0;
+    list-style: none;
+
+    &__item {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        min-width: 0;
+        padding: clamp(1.25rem, 2vw, 2rem) clamp(0.75rem, 1.5vw, 1.25rem);
+        text-align: center;
+
+        @media (min-width: $tablet) {
+            width: 50%;
+        }
+
+        @media (min-width: $laptop) {
+            width: 33.333%;
+        }
+
+        @media (min-width: $desktop) {
+            width: 20%;
+
+            &:not(:last-child)::after {
+                content: '';
+                position: absolute;
+                top: 4rem;
+                right: 0;
+                width: 1px;
+                height: 8rem;
+                background: linear-gradient(transparent, rgb(from var(--color-white) r g b / 8%), transparent);
+            }
+        }
+    }
+
+    &__title {
+        margin: 0 0 1.1rem;
+        font-family: var(--font-heading);
+        font-size: 1.25rem;
+        font-weight: 600;
+        line-height: var(--line-height-heading);
+        text-transform: uppercase;
+        color: var(--color-white);
+    }
+
+    &__text {
+        max-width: 16rem;
+        margin: 0;
+        font-size: 0.9375rem;
+        line-height: 1.8;
+        color: var(--color-text-primary);
+    }
+}

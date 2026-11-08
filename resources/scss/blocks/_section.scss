@@ -1,25 +1,44 @@
+@use '../abstracts' as *;
+
 .section {
-    padding-block: 6rem;
+    position: relative;
+    overflow: hidden;
+    padding-block: clamp(6rem, 10vw, 11rem);
 
     &__inner {
         max-width: 120rem;
         margin-inline: auto;
         padding-inline: 2rem;
+
+        @include tablet {
+            padding-inline: 4rem;
+        }
     }
 
     &__title {
-        margin: 0 0 1.6rem;
+        margin: 0 0 1rem;
         font-family: var(--font-heading);
-        font-size: var(--heading-size-h1);
+        font-size: var(--heading-size-h2);
         line-height: var(--line-height-heading);
         letter-spacing: var(--heading-letter-spacing);
-        color: var(--text-primary);
+        text-transform: uppercase;
+        color: var(--color-white);
+
+        &::after {
+            content: '';
+            display: block;
+            width: 10rem;
+            height: 2px;
+            margin-top: 1.25rem;
+            background: var(--gradient-gold-transparent);
+        }
     }
 
     &__content {
-        max-width: 60rem;
+        max-width: 44rem;
         margin: 0;
-        font-size: var(--font-size-md);
+        font-size: var(--font-size-sm);
+        line-height: 1.8;
         color: var(--text-secondary);
     }
 }
