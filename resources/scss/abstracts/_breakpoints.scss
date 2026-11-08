@@ -1,5 +1,6 @@
-$mobile: 57.6rem;
-$tablet: 76.8rem;
-$laptop: 102.4rem;
-$desktop: 128rem;
-$wide: 144rem;
+// Breakpoints for a 16px root font-size (1rem = 16px).
+$mobile: 36rem;   // 576px
+$tablet: 48rem;   // 768px
+$laptop: 64rem;   // 1024px
+$desktop: 80rem;  // 1280px
+$wide: 90rem;     // 1440px
