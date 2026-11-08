@@ -1,0 +1,25 @@
+.section {
+    padding-block: 6rem;
+
+    &__inner {
+        max-width: 120rem;
+        margin-inline: auto;
+        padding-inline: 2rem;
+    }
+
+    &__title {
+        margin: 0 0 1.6rem;
+        font-family: var(--font-heading);
+        font-size: var(--heading-size-h1);
+        line-height: var(--line-height-heading);
+        letter-spacing: var(--heading-letter-spacing);
+        color: var(--text-primary);
+    }
+
+    &__content {
+        max-width: 60rem;
+        margin: 0;
+        font-size: var(--font-size-md);
+        color: var(--text-secondary);
+    }
+}
