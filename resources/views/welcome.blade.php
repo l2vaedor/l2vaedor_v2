@@ -1,16 +1,18 @@
 @php
     $features = [
-        ['title' => 'Balanced Gameplay', 'text' => 'Every class has a purpose. Competitive PvP, rewarding PvE, and adjusted mechanics create an experience where skill matters.'],
-        ['title' => 'Fair & Transparent', 'text' => 'Zero pay-to-win philosophy, active moderation, and clear server policies keep competition on equal ground.'],
-        ['title' => 'Community Driven', 'text' => 'Vaedor grows through regular events, feedback, and continuous improvements shaped with the community.'],
-        ['title' => 'Clear Progression', 'text' => 'Players should always know what to chase next: gear, raids, clans, Olympiad, sieges, and long-term achievements.'],
-        ['title' => 'Stable World', 'text' => 'Infrastructure, protection, backups, and monitoring support a server made for long-term play.'],
+        ['icon' => 'feature-1.png', 'title' => 'Balanced Gameplay', 'text' => 'Every class has a purpose. Competitive PvP, rewarding PvE, and adjusted mechanics create an experience where skill matters.'],
+        ['icon' => 'feature-2.png', 'title' => 'Fair & Transparent', 'text' => 'Zero pay-to-win philosophy, active moderation, and clear server policies keep competition on equal ground.'],
+        ['icon' => 'feature-3.png', 'title' => 'Community Driven', 'text' => 'Vaedor grows through regular events, feedback, and continuous improvements shaped with the community.'],
+        ['icon' => 'feature-4.png', 'title' => 'Clear Progression', 'text' => 'Players should always know what to chase next: gear, raids, clans, Olympiad, sieges, and long-term achievements.'],
+        ['icon' => 'feature-5.png', 'title' => 'Stable World', 'text' => 'Infrastructure, protection, backups, and monitoring support a server made for long-term play.'],
     ];
 @endphp
 
 <x-layout title="Home">
     {{-- Hero --}}
     <section class="hero">
+        <img class="hero__image" src="{{ asset('assets/images/temp/hero-image.webp') }}" alt="" aria-hidden="true">
+
         <div class="hero__inner">
             <p class="hero__subtitle">Lineage II Private Server</p>
             <h1 class="hero__title">Vaedor</h1>
@@ -24,7 +26,9 @@
     </section>
 
     {{-- Features --}}
-    <section class="section" id="features">
+    <section class="section section--features" id="features">
+        <img class="section__background" src="{{ asset('assets/images/temp/bg-features-vaedor.webp') }}" alt="" aria-hidden="true">
+
         <div class="section__inner">
             <h2 class="section__title">Why Players Stay</h2>
             <p class="section__content">Vaedor keeps the first screen clean, but gives players the details they look for before choosing a server: fairness, stability, clear progression, and real reasons to return.</p>
@@ -32,6 +36,7 @@
             <ul class="features">
                 @foreach ($features as $feature)
                     <li class="features__item">
+                        <img class="features__image" src="{{ asset('assets/images/icons/features/' . $feature['icon']) }}" alt="" aria-hidden="true">
                         <h3 class="features__title">{{ $feature['title'] }}</h3>
                         <p class="features__text">{{ $feature['text'] }}</p>
                     </li>
@@ -41,7 +46,9 @@
     </section>
 
     {{-- News --}}
-    <section class="section" id="news">
+    <section class="section section--news" id="news">
+        <img class="section__background" src="{{ asset('assets/images/temp/bg-news-vaedor.webp') }}" alt="" aria-hidden="true">
+
         <div class="section__inner">
             <div class="patch-notes__header">
                 <div>
@@ -69,7 +76,9 @@
     </section>
 
     {{-- Rankings --}}
-    <section class="section" id="rankings">
+    <section class="section section--rankings" id="rankings">
+        <img class="section__background" src="{{ asset('assets/images/temp/bg-rankings-vaedor.webp') }}" alt="" aria-hidden="true">
+
         <div class="section__inner">
             <div class="rankings">
                 <div class="rankings__header">
@@ -88,9 +97,13 @@
 
     {{-- CTA --}}
     <section class="cta">
+        <img class="cta__background" src="{{ asset('assets/images/temp/bg-cta-footer-vaedor.webp') }}" alt="" aria-hidden="true">
+
         <div class="cta__inner">
-            <h2 class="cta__title">Ready to begin your journey?</h2>
-            <p class="cta__text">Create your account, download the client, and join the community on Discord.</p>
+            <div>
+                <h2 class="cta__title">Ready to begin your journey?</h2>
+                <p class="cta__text">Create your account, download the client, and join the community on Discord.</p>
+            </div>
 
             <div class="cta__actions">
                 <a href="{{ url('/register') }}" class="button button--primary">Create Account</a>

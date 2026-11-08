@@ -40,6 +40,20 @@
         }
     }
 
+    &__image {
+        width: clamp(5.5rem, 7vw, 7.75rem);
+        height: clamp(5.5rem, 7vw, 7.75rem);
+        margin-bottom: clamp(1.6rem, 2.5vw, 2.35rem);
+        object-fit: contain;
+        filter: drop-shadow(0 0.8rem 1.25rem rgb(from var(--color-black) r g b / 42%));
+        transition: transform 0.3s ease, filter 0.3s ease;
+
+        &:hover {
+            transform: translateY(-4px) scale(1.08);
+            filter: brightness(1.1) drop-shadow(0 0 1rem rgb(from var(--color-accent) r g b / 25%));
+        }
+    }
+
     &__title {
         margin: 0 0 1.1rem;
         font-family: var(--font-heading);

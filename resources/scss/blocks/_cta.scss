@@ -1,15 +1,36 @@
 @use '../abstracts' as *;
 
 .cta {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
     padding-block: clamp(2rem, 3vw, 3rem);
-    background:
-        linear-gradient(180deg, rgb(from var(--bg-primary) r g b / 36%), var(--bg-primary) 96%);
+
+    &__background {
+        position: absolute;
+        inset: 0;
+        z-index: -2;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center 42%;
+        pointer-events: none;
+    }
+
+    &::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+        background: linear-gradient(180deg, rgb(from var(--bg-primary) r g b / 36%), var(--bg-primary) 96%);
+    }
 
     &__inner {
         display: flex;
         flex-direction: column;
         align-items: stretch;
         gap: clamp(2rem, 4vw, 4rem);
+        width: calc(100% - 4rem);
         max-width: 120rem;
         margin-inline: auto;
         padding: clamp(2rem, 4vw, 3.25rem);
@@ -22,7 +43,6 @@
                 rgb(from var(--bg-primary) r g b / 78%)
             );
         box-shadow: var(--shadow-lg);
-        overflow: hidden;
 
         @include tablet {
             flex-direction: row;
